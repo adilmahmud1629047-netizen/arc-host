@@ -1,0 +1,30 @@
+{
+  "name": "flare-hosting-backend",
+  "version": "1.0.0",
+  "description": "REST API backend for the FLARE Hosting platform",
+  "main": "src/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:create": "node src/services/migrator.js create",
+    "db:migrate": "node src/services/migrator.js up",
+    "db:status": "node src/services/migrator.js status",
+    "db:check": "node src/services/migrator.js check",
+    "db:seed": "node src/services/seed.js",
+    "test": "node --test --test-concurrency=1 --require ./test/_hooks.cjs test/auth.test.js test/auth-nav.test.js test/plans.test.js test/dashboard.test.js test/orders.test.js test/payments.test.js test/sslcommerz.test.js test/uddoktapay.test.js test/sms.test.js test/textbee-webhook.test.js test/bkash-payment.test.js test/provisioning.test.js test/admin.test.js test/admin-orders.test.js test/admin-customers.test.js test/clean-urls.test.js test/bkash-instructions.test.js test/manual-payment.test.js test/admin-products.test.js test/step46-purchase-gate.test.js test/step47-purchase.test.js test/step47-verify.test.js test/step47-admin.test.js test/step48-customers.test.js test/step47-regression.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "argon2": "^0.45.1",
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
+  },
+  "allowScripts": {
+    "argon2@0.45.1": true
+  }
+}

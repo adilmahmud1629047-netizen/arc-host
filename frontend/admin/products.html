@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="ARC HOST admin product catalog management (hosting, VPS, Minecraft)."
+    />
+    <title>Products — Admin — ARC HOST</title>
+    <link rel="canonical" href="https://billing.flarenodesbd.com/admin/products" />
+    <link rel="stylesheet" href="/admin/css/admin.css" />
+  </head>
+  <body class="admin-dashboard-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="admin-topbar">
+      <a class="admin-brand" href="/">
+        <span class="admin-brand-mark" aria-hidden="true">A</span>
+        <span>ARC <span class="admin-brand-thin">HOST</span></span>
+        <span class="admin-badge">Admin</span>
+      </a>
+
+      <div class="admin-topbar-actions">
+        <div class="admin-account-chip" id="admin-header-account">
+          <span class="admin-account-name" id="admin-user-name"></span>
+          <span class="admin-account-email" id="admin-user-email"></span>
+        </div>
+        <a class="btn btn-outline btn-sm" href="/">View Site</a>
+        <button
+          class="btn btn-primary btn-sm"
+          id="admin-logout-button"
+          type="button"
+        >
+          Logout
+        </button>
+        <button
+          class="admin-menu-toggle"
+          id="admin-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="admin-sidebar"
+        >
+          <span class="visually-hidden">Toggle admin menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-body" id="admin-products-root">
+      <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin">
+        <nav aria-label="Admin sections">
+          <ul class="admin-nav">
+            <li class="admin-nav-label">Operations</li>
+            <li>
+              <a href="/admin/dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a href="/admin/customers">Customers</a>
+            </li>
+            <li>
+              <a href="/admin/orders">Orders</a>
+            </li>
+            <li>
+              <a href="/admin/payments">Payments</a>
+            </li>
+            <li class="admin-nav-label">Catalog</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Services</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li>
+              <a href="/admin/products?category=web" id="nav-cat-web"
+                >Hosting</a
+              >
+            </li>
+            <li>
+              <a href="/admin/products?category=vps" id="nav-cat-vps">VPS</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=minecraft" id="nav-cat-minecraft"
+                >Minecraft</a
+              >
+            </li>
+            <li class="admin-nav-label">System</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Support</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Settings</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="admin-main" id="main-content">
+        <div class="admin-main-inner">
+          <p
+            class="form-status admin-status"
+            id="admin-products-status"
+            tabindex="-1"
+            hidden
+          ></p>
+
+          <div class="admin-page-header">
+            <div>
+              <h1>Products</h1>
+              <p class="admin-page-lead" id="admin-products-summary">…</p>
+            </div>
+            <div class="admin-page-header-actions">
+              <button class="btn btn-primary btn-sm" type="button" id="admin-products-add">
+                Add product
+              </button>
+              <a class="btn btn-outline btn-sm" href="/admin/dashboard"
+                >← Dashboard</a
+              >
+            </div>
+          </div>
+
+          <div class="admin-tabs" role="group" aria-label="Product category">
+            <button class="admin-tab" type="button" data-category="">All</button>
+            <button class="admin-tab" type="button" data-category="web">
+              Web Hosting
+            </button>
+            <button class="admin-tab" type="button" data-category="minecraft">
+              Minecraft
+            </button>
+            <button class="admin-tab" type="button" data-category="vps">
+              VPS
+            </button>
+          </div>
+
+          <form
+            class="admin-filters"
+            id="admin-products-filters"
+            novalidate
+          >
+            <div class="form-field">
+              <label for="filter-status">Status</label>
+              <select id="filter-status" name="status">
+                <option value="">All statuses</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="archived">Archived</option>
+              </select>
+            </div>
+            <div class="form-field form-field-grow">
+              <label for="filter-search">Search</label>
+              <input
+                type="search"
+                id="filter-search"
+                name="search"
+                placeholder="Name or slug"
+                maxlength="100"
+                autocomplete="off"
+              />
+            </div>
+            <div class="admin-filter-actions">
+              <button class="btn btn-primary" type="submit">Apply</button>
+              <button
+                class="btn btn-outline"
+                type="button"
+                id="admin-products-reset"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+
+          <section
+            class="admin-form-panel"
+            id="admin-products-form"
+            aria-labelledby="admin-products-form-title"
+            hidden
+          >
+            <h2 id="admin-products-form-title">Add product</h2>
+            <form id="product-editor" novalidate>
+              <div class="admin-form-grid">
+                <div class="form-field">
+                  <label for="product-type">Product type</label>
+                  <select id="product-type" name="productType">
+                    <option value="hosting">Hosting</option>
+                    <option value="vps">VPS</option>
+                  </select>
+                  <span class="form-field-hint" id="product-type-hint"
+                    >Web and Minecraft plans are hosting categories. VPS is its
+                    own catalog.</span
+                  >
+                  <span
+                    class="form-field-hint"
+                    id="product-type-locked-hint"
+                    hidden
+                    >Product type cannot be changed after creation.</span
+                  >
+                </div>
+                <div class="form-field" id="field-category">
+                  <label for="product-category">Hosting category</label>
+                  <select id="product-category" name="category">
+                    <option value="web">Web hosting</option>
+                    <option value="minecraft">Minecraft</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="product-name">Name</label>
+                  <input
+                    type="text"
+                    id="product-name"
+                    name="name"
+                    maxlength="100"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="product-slug">Slug</label>
+                  <input
+                    type="text"
+                    id="product-slug"
+                    name="slug"
+                    maxlength="100"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="product-price">Price</label>
+                  <input
+                    type="text"
+                    id="product-price"
+                    name="price"
+                    maxlength="11"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="product-billing">Billing cycle</label>
+                  <select id="product-billing" name="billingCycle">
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="yearly">Yearly</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="product-status-field">Status</label>
+                  <select id="product-status-field" name="status">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="product-display">Display order</label>
+                  <input
+                    type="text"
+                    id="product-display"
+                    name="displayOrder"
+                    maxlength="6"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="product-storage">Storage (GB)</label>
+                  <input
+                    type="text"
+                    id="product-storage"
+                    name="storageGb"
+                    maxlength="7"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="product-bandwidth">Bandwidth (GB)</label>
+                  <input
+                    type="text"
+                    id="product-bandwidth"
+                    name="bandwidthGb"
+                    maxlength="7"
+                    autocomplete="off"
+                    placeholder="Empty = unlimited"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="product-cpu">vCPU cores</label>
+                  <input
+                    type="text"
+                    id="product-cpu"
+                    name="cpuCores"
+                    maxlength="3"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="product-ram">RAM (MB)</label>
+                  <input
+                    type="text"
+                    id="product-ram"
+                    name="ramMb"
+                    maxlength="7"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-field" id="field-domains">
+                  <label for="product-domains">Domains</label>
+                  <input
+                    type="text"
+                    id="product-domains"
+                    name="domains"
+                    maxlength="6"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-field" id="field-email">
+                  <label for="product-email">Email accounts</label>
+                  <input
+                    type="text"
+                    id="product-email"
+                    name="emailAccounts"
+                    maxlength="6"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-field" id="field-databases">
+                  <label for="product-databases">Databases</label>
+                  <input
+                    type="text"
+                    id="product-databases"
+                    name="databases"
+                    maxlength="6"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-field" id="field-ipv4">
+                  <label for="product-ipv4">IPv4 addresses</label>
+                  <input
+                    type="text"
+                    id="product-ipv4"
+                    name="ipv4Addresses"
+                    maxlength="2"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-field" id="field-ssl">
+                  <label for="product-ssl">SSL</label>
+                  <select id="product-ssl" name="ssl">
+                    <option value="true">Included</option>
+                    <option value="false">Not included</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="product-popular" class="admin-checkbox-label">
+                    <input type="checkbox" id="product-popular" name="popular" />
+                    Mark as popular (featured card)
+                  </label>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="product-description">Description</label>
+                <textarea
+                  id="product-description"
+                  name="description"
+                  maxlength="500"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="admin-form-actions">
+                <button class="btn btn-primary" type="submit" id="admin-products-save">
+                  Save product
+                </button>
+                <button
+                  class="btn btn-outline"
+                  type="button"
+                  id="admin-products-cancel"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <p class="form-status" id="admin-products-loading" hidden>
+            Loading products…
+          </p>
+          <p
+            class="form-status form-status-empty"
+            id="admin-products-empty"
+            hidden
+          ></p>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table admin-table-products">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Catalog</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Billing</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Popular</th>
+                  <th scope="col">Orders</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-products-tbody"></tbody>
+            </table>
+          </div>
+
+          <div class="admin-pagination">
+            <button
+              class="btn btn-outline btn-sm"
+              type="button"
+              id="admin-products-prev"
+            >
+              Previous
+            </button>
+            <span
+              class="admin-pagination-info"
+              id="admin-products-page-info"
+            ></span>
+            <button
+              class="btn btn-outline btn-sm"
+              type="button"
+              id="admin-products-next"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/admin/js/admin-auth.js"></script>
+    <script src="/admin/js/admin-products.js"></script>
+  </body>
+</html>

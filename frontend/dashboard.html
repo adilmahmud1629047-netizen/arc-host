@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Your ARC HOST customer dashboard — account, orders, services, and billing in one place."
+    />
+    <title>Dashboard | ARC HOST</title>
+    <!--
+      Canonical is deliberately RELATIVE until the client's final domain is
+      supplied. Set CLIENT_BRAND.origin in /js/client-config.js to emit an
+      absolute canonical URL — do not hardcode a third-party domain here.
+    -->
+    <link rel="canonical" href="/dashboard" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client-theme.css" />
+  </head>
+  <body class="dashboard-page" data-page-title="Dashboard">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="dashboard-shell">
+      <header class="dashboard-header">
+        <div class="dashboard-header-inner">
+          <a
+            class="brand"
+            href="/"
+            data-brand-label="{brand} — home"
+            aria-label="ARC HOST — home"
+          >
+            <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+            <span class="brand-text" data-brand-name>ARC HOST</span>
+          </a>
+
+          <div class="dashboard-header-actions">
+            <div class="dashboard-account-chip" id="header-account" hidden>
+              <span class="dashboard-account-name" id="header-user-name"></span>
+              <span class="dashboard-account-email" id="header-user-email"></span>
+            </div>
+            <a class="btn btn-outline btn-sm" href="/">View Site</a>
+            <button class="btn btn-outline btn-sm" id="logout-button" type="button">
+              Logout
+            </button>
+            <button
+              class="dashboard-menu-toggle"
+              id="dashboard-menu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="dashboard-sidebar"
+            >
+              <span class="visually-hidden">Toggle dashboard menu</span>
+              <span class="nav-toggle-bar" aria-hidden="true"></span>
+              <span class="nav-toggle-bar" aria-hidden="true"></span>
+              <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-body">
+        <aside
+          class="dashboard-sidebar"
+          id="dashboard-sidebar"
+          aria-label="Dashboard"
+        >
+          <nav aria-label="Dashboard sections">
+            <ul class="dashboard-nav">
+              <li>
+                <a href="#overview" data-nav-section="overview" aria-current="page"
+                  >Overview</a
+                >
+              </li>
+              <li>
+                <a href="#hosting" data-nav-section="hosting">Hosting Plans</a>
+              </li>
+              <li>
+                <a href="#vps" data-nav-section="vps">VPS Plans</a>
+              </li>
+              <li>
+                <a href="#account" data-nav-section="account">Account</a>
+              </li>
+              <li>
+                <a href="#services" data-nav-section="services">Services</a>
+              </li>
+              <li>
+                <a href="#orders" data-nav-section="orders">Orders</a>
+              </li>
+              <li>
+                <a href="#billing" data-nav-section="billing">Billing</a>
+              </li>
+              <li>
+                <a href="#support" data-nav-section="support">Support</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="dashboard-sidebar-footer">
+            <button class="btn btn-outline btn-block" id="sidebar-logout" type="button">
+              Logout
+            </button>
+          </div>
+        </aside>
+
+        <main class="dashboard-main" id="main-content" tabindex="-1">
+          <p class="form-status" id="dashboard-status" tabindex="-1" hidden></p>
+
+          <div id="dashboard-root" hidden>
+            <!-- Overview -->
+            <section
+              class="dashboard-section"
+              id="section-overview"
+              data-section="overview"
+              aria-labelledby="overview-heading"
+            >
+              <div class="dashboard-section-head">
+                <span class="eyebrow">Overview</span>
+                <h1 id="overview-heading">Welcome back</h1>
+                <p class="lead lead-sm" id="overview-greeting">
+                  Here is a snapshot of your account — every number below is
+                  read from the live APIs.
+                </p>
+              </div>
+
+              <div class="stat-grid stat-grid-4" aria-label="Account snapshot">
+                <article class="stat-card">
+                  <span class="stat-value" id="stat-active-services">0</span>
+                  <span class="stat-label">Active Services</span>
+                  <span class="stat-hint">From services API</span>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-value" id="stat-pending-orders">—</span>
+                  <span class="stat-label">Pending Orders</span>
+                  <span class="stat-hint">From orders API</span>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-value stat-value-text" id="stat-account-status"
+                    >—</span
+                  >
+                  <span class="stat-label">Account Status</span>
+                  <span class="stat-hint" id="stat-email-verified">—</span>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-value" id="stat-support-tickets">0</span>
+                  <span class="stat-label">Support Tickets</span>
+                  <span class="stat-hint">Coming soon</span>
+                </article>
+              </div>
+
+              <div class="dashboard-panel-row">
+                <article class="dashboard-panel">
+                  <h2>Next steps</h2>
+                  <p>
+                    Browse hosting or VPS plans and select one to open checkout.
+                    Placing an order snapshots the catalog price — payment
+                    processing is not enabled yet.
+                  </p>
+                  <div class="cta-actions cta-actions-start">
+                    <a class="btn btn-primary" href="#hosting">Hosting Plans</a>
+                    <a class="btn btn-outline" href="#vps">VPS Plans</a>
+                  </div>
+                </article>
+                <article class="dashboard-panel">
+                  <h2>Coming soon</h2>
+                  <p>
+                    Support unlocks in a later platform step. Services now
+                    lists your real service instances from the services API,
+                    and billing lists payment attempts.
+                  </p>
+                </article>
+              </div>
+            </section>
+
+            <!-- Hosting Plans -->
+            <section
+              class="dashboard-section"
+              id="section-hosting"
+              data-section="hosting"
+              aria-labelledby="hosting-heading"
+              hidden
+            >
+              <div class="dashboard-section-head">
+                <span class="eyebrow">Hosting Plans</span>
+                <h1 id="hosting-heading">Available hosting plans</h1>
+                <p class="lead lead-sm">
+                  Live catalog from the public plan API. Selecting a plan opens
+                  checkout so you can place an order.
+                </p>
+              </div>
+
+              <p class="plan-status" id="hosting-status" tabindex="-1" hidden></p>
+              <div
+                class="grid-3 dashboard-plan-grid"
+                id="hosting-plan-grid"
+                aria-live="polite"
+              ></div>
+            </section>
+
+            <!-- VPS Plans -->
+            <section
+              class="dashboard-section"
+              id="section-vps"
+              data-section="vps"
+              aria-labelledby="vps-heading"
+              hidden
+            >
+              <div class="dashboard-section-head">
+                <span class="eyebrow">VPS Plans</span>
+                <h1 id="vps-heading">Available VPS plans</h1>
+                <p class="lead lead-sm">
+                  Live catalog from the public plan API. Selecting a plan opens
+                  checkout so you can place an order.
+                </p>
+              </div>
+
+              <p class="plan-status" id="vps-status" tabindex="-1" hidden></p>
+              <div
+                class="grid-3 dashboard-plan-grid"
+                id="vps-plan-grid"
+                aria-live="polite"
+              ></div>
+            </section>
+
+            <!-- Account -->
+            <section
+              class="dashboard-section"
+              id="section-account"
+              data-section="account"
+              aria-labelledby="account-heading"
+              hidden
+            >
+              <div class="dashboard-section-head">
+                <span class="eyebrow">Account</span>
+                <h1 id="account-heading">Account information</h1>
+                <p class="lead lead-sm">
+                  Read-only profile details for this step. Editing arrives later.
+                </p>
+              </div>
+
+              <article class="card dashboard-account-card">
+                <h2>Profile</h2>
+                <dl class="account-dl">
+                  <div>
+                    <dt>First name</dt>
+                    <dd id="account-first-name">—</dd>
+                  </div>
+                  <div>
+                    <dt>Last name</dt>
+                    <dd id="account-last-name">—</dd>
+                  </div>
+                  <div>
+                    <dt>Email</dt>
+                    <dd id="account-email">—</dd>
+                  </div>
+                  <div>
+                    <dt>Account status</dt>
+                    <dd id="account-status">—</dd>
+                  </div>
+                  <div>
+                    <dt>Email verification</dt>
+                    <dd id="account-email-verified">—</dd>
+                  </div>
+                  <div>
+                    <dt>Registration date</dt>
+                    <dd id="account-created">—</dd>
+                  </div>
+                </dl>
+                <p class="demo-note">
+                  Profile editing is not available yet.
+                </p>
+              </article>
+            </section>
+
+            <!-- Services -->
+            <section
+              class="dashboard-section"
+              id="section-services"
+              data-section="services"
+              aria-labelledby="services-heading"
+              hidden
+            >
+              <div class="dashboard-section-head">
+                <span class="eyebrow">Services</span>
+                <h1 id="services-heading">Your services</h1>
+                <p class="lead lead-sm">
+                  Hosting and VPS services for your paid orders. A service is
+                  listed as soon as provisioning starts and becomes active
+                  only after provisioning succeeds — nothing is simulated.
+                </p>
+              </div>
+
+              <p class="plan-status" id="services-status" tabindex="-1" hidden></p>
+
+              <div id="services-list" aria-live="polite"></div>
+
+              <div
+                class="order-empty coming-soon-panel"
+                id="services-empty"
+                role="status"
+                hidden
+              >
+                <span class="badge badge-muted">Empty</span>
+                <h2>No services yet</h2>
+                <p>
+                  Services appear here after a paid order finishes
+                  provisioning. An empty list never means a hidden service
+                  exists.
+                </p>
+                <div class="cta-actions cta-actions-start">
+                  <a class="btn btn-primary" href="#orders">View My Orders</a>
+                  <a class="btn btn-outline" href="/web-hosting"
+                    >Browse Plans</a
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Orders -->
+            <section
+              class="dashboard-section"
+              id="section-orders"
+              data-section="orders"
+              aria-labelledby="orders-heading"
+              hidden
+            >
+              <div class="dashboard-section-head">
+                <span class="eyebrow">Orders</span>
+                <h1 id="orders-heading">Orders</h1>
+                <p class="lead lead-sm">
+                  Orders you place from checkout appear here with their
+                  payment status, plus the matching service state once
+                  provisioning has run.
+                </p>
+              </div>
+
+              <p class="plan-status" id="orders-status" tabindex="-1" hidden></p>
+
+              <div id="orders-list" aria-live="polite"></div>
+
+              <div
+                class="order-empty coming-soon-panel"
+                id="orders-empty"
+                role="status"
+                hidden
+              >
+                <span class="badge badge-muted">Empty</span>
+                <h2>You haven't placed any orders yet</h2>
+                <p>
+                  Select a hosting or VPS plan from the catalog to create your
+                  first order.
+                </p>
+                <div class="cta-actions cta-actions-start">
+                  <a class="btn btn-primary" href="#hosting">Hosting Plans</a>
+                  <a class="btn btn-outline" href="#vps">VPS Plans</a>
+                </div>
+              </div>
+
+              <nav
+                class="orders-pagination"
+                id="orders-pagination"
+                aria-label="Orders pagination"
+                hidden
+              >
+                <button
+                  class="btn btn-outline btn-sm"
+                  id="orders-prev"
+                  type="button"
+                >
+                  Previous
+                </button>
+                <span class="orders-page-info" id="orders-page-info"></span>
+                <button
+                  class="btn btn-outline btn-sm"
+                  id="orders-next"
+                  type="button"
+                >
+                  Next
+                </button>
+              </nav>
+
+              <article
+                class="card order-detail-card"
+                id="order-detail"
+                hidden
+                aria-labelledby="order-detail-heading"
+              >
+                <div class="order-detail-head">
+                  <div>
+                    <span class="eyebrow">Order detail</span>
+                    <h2 id="order-detail-heading">Order details</h2>
+                  </div>
+                  <button
+                    class="btn btn-outline btn-sm"
+                    id="order-detail-close"
+                    type="button"
+                  >
+                    Back to list
+                  </button>
+                </div>
+                <p class="plan-status" id="order-detail-status" tabindex="-1" hidden></p>
+                <dl class="account-dl" id="order-detail-dl" hidden>
+                  <div>
+                    <dt>Order number</dt>
+                    <dd id="detail-order-number">—</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd><span class="order-status" id="detail-status">—</span></dd>
+                  </div>
+                  <div>
+                    <dt>Payment</dt>
+                    <dd><span id="detail-payment-state">—</span></dd>
+                  </div>
+                  <div>
+                    <dt>Product</dt>
+                    <dd id="detail-product-type">—</dd>
+                  </div>
+                  <div>
+                    <dt>Plan</dt>
+                    <dd id="detail-plan">—</dd>
+                  </div>
+                  <div>
+                    <dt>Amount</dt>
+                    <dd id="detail-amount">—</dd>
+                  </div>
+                  <div>
+                    <dt>Billing cycle</dt>
+                    <dd id="detail-billing">—</dd>
+                  </div>
+                  <div>
+                    <dt>Created</dt>
+                    <dd id="detail-created">—</dd>
+                  </div>
+                </dl>
+                <p class="demo-note" id="order-detail-note" hidden>
+                  This order has not been paid yet — no service is provisioned
+                  until the admin verifies your payment.
+                </p>
+
+                <div class="card" id="dash-bkash-instructions" hidden>
+                  <h3>Pay with bKash</h3>
+                  <p class="form-status" id="dash-bkash-status" hidden></p>
+                  <dl class="confirm-dl">
+                    <div>
+                      <dt>bKash number (Send Money)</dt>
+                      <dd id="dash-bkash-receiver">—</dd>
+                    </div>
+                    <div>
+                      <dt>Exact amount</dt>
+                      <dd id="dash-bkash-amount">—</dd>
+                    </div>
+                    <div>
+                      <dt>Order number</dt>
+                      <dd id="dash-bkash-order-number">—</dd>
+                    </div>
+                  </dl>
+                  <ol>
+                    <li>Open bKash and choose <strong>Send Money</strong>.</li>
+                    <li>
+                      Send the <strong>exact amount</strong> shown above to the
+                      bKash number shown above — the amount must match exactly.
+                    </li>
+                    <li>Keep the order number for your records.</li>
+                  </ol>
+                  <p class="demo-note">
+                    Verification is automatic: when your confirmation SMS
+                    reaches the payment SIM, this order updates by itself —
+                    there is no button to mark it paid. Refresh this page
+                    afterwards to check the status.
+                  </p>
+                  <div class="cta-actions cta-actions-start">
+                    <button
+                      class="btn btn-outline"
+                      id="dash-bkash-check-status"
+                      type="button"
+                    >
+                      Check order status
+                    </button>
+                    <button
+                      class="btn btn-outline"
+                      id="dash-bkash-hide"
+                      type="button"
+                    >
+                      Hide instructions
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <!-- Billing (payment attempts) -->
+            <section
+              class="dashboard-section"
+              id="section-billing"
+              data-section="billing"
+              aria-labelledby="billing-heading"
+              hidden
+            >
+              <div class="dashboard-section-head">
+                <span class="eyebrow">Billing</span>
+                <h1 id="billing-heading">Billing &amp; payments</h1>
+                <p class="lead lead-sm">
+                  Payment attempts for your orders appear here. Each entry
+                  records one attempt — its status shows whether the provider
+                  verified it.
+                </p>
+              </div>
+
+              <p class="plan-status" id="billing-status" tabindex="-1" hidden></p>
+
+              <div id="payments-list" aria-live="polite"></div>
+
+              <div
+                class="order-empty coming-soon-panel"
+                id="payments-empty"
+                role="status"
+                hidden
+              >
+                <span class="badge badge-muted">Empty</span>
+                <h2>No payment attempts yet</h2>
+                <p>
+                  Start from checkout with Proceed to Payment — attempted
+                  payments will be listed here with their status.
+                </p>
+                <div class="cta-actions cta-actions-start">
+                  <a class="btn btn-primary" href="#orders">View My Orders</a>
+                  <a class="btn btn-outline" href="/web-hosting"
+                    >Browse Plans</a
+                  >
+                </div>
+              </div>
+
+              <nav
+                class="orders-pagination"
+                id="payments-pagination"
+                aria-label="Payments pagination"
+                hidden
+              >
+                <button
+                  class="btn btn-outline btn-sm"
+                  id="payments-prev"
+                  type="button"
+                >
+                  Previous
+                </button>
+                <span class="orders-page-info" id="payments-page-info"></span>
+                <button
+                  class="btn btn-outline btn-sm"
+                  id="payments-next"
+                  type="button"
+                >
+                  Next
+                </button>
+              </nav>
+
+              <p class="demo-note" id="payments-note">
+                Entries record attempts only — an entry's status shows the
+                verification result, and no invoice or subscription exists.
+              </p>
+            </section>
+
+            <!-- Support (placeholder) -->
+            <section
+              class="dashboard-section"
+              id="section-support"
+              data-section="support"
+              aria-labelledby="support-heading"
+              hidden
+            >
+              <div class="dashboard-section-head">
+                <span class="eyebrow">Support</span>
+                <h1 id="support-heading">Support</h1>
+                <p class="lead lead-sm">
+                  Tickets and support history will appear here in a future step.
+                </p>
+              </div>
+              <div class="coming-soon-panel" role="status">
+                <span class="badge badge-muted">Coming soon</span>
+                <h2>No tickets yet</h2>
+                <p>
+                  Support ticketing is not enabled. Use the public contact page
+                  for now.
+                </p>
+                <div class="cta-actions cta-actions-start">
+                  <a class="btn btn-outline" href="/contact">Contact Us</a>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="/js/client-config.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/plans.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="ARC HOST admin manual payment verification." />
+    <title>Payments — Admin — ARC HOST</title>
+    <link rel="canonical" href="https://billing.flarenodesbd.com/admin/payments" />
+    <link rel="stylesheet" href="/admin/css/admin.css" />
+  </head>
+  <body class="admin-dashboard-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="admin-topbar">
+      <a class="admin-brand" href="/">
+        <span class="admin-brand-mark" aria-hidden="true">A</span>
+        <span>ARC <span class="admin-brand-thin">HOST</span></span>
+        <span class="admin-badge">Admin</span>
+      </a>
+
+      <div class="admin-topbar-actions">
+        <div class="admin-account-chip" id="admin-header-account">
+          <span class="admin-account-name" id="admin-user-name"></span>
+          <span class="admin-account-email" id="admin-user-email"></span>
+        </div>
+        <a class="btn btn-outline btn-sm" href="/">View Site</a>
+        <button
+          class="btn btn-primary btn-sm"
+          id="admin-logout-button"
+          type="button"
+        >
+          Logout
+        </button>
+        <button
+          class="admin-menu-toggle"
+          id="admin-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="admin-sidebar"
+        >
+          <span class="visually-hidden">Toggle admin menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-body" id="admin-payments-root">
+      <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin">
+        <nav aria-label="Admin sections">
+          <ul class="admin-nav">
+            <li class="admin-nav-label">Operations</li>
+            <li>
+              <a href="/admin/dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a href="/admin/customers">Customers</a>
+            </li>
+            <li>
+              <a href="/admin/orders">Orders</a>
+            </li>
+            <li>
+              <a href="/admin/payments" aria-current="page">Payments</a>
+            </li>
+            <li class="admin-nav-label">Catalog</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Services</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li>
+              <a href="/admin/products?category=web">Hosting</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=vps">VPS</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=minecraft">Minecraft</a>
+            </li>
+            <li class="admin-nav-label">System</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Support</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Settings</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="admin-main" id="main-content">
+        <div class="admin-main-inner">
+          <p
+            class="form-status admin-status"
+            id="admin-payments-status"
+            tabindex="-1"
+            hidden
+          ></p>
+
+          <div class="admin-page-header">
+            <div>
+              <h1>Payments</h1>
+              <p class="admin-page-lead" id="admin-payments-summary">…</p>
+            </div>
+            <a class="btn btn-outline btn-sm" href="/admin/orders"
+              >← Orders</a
+            >
+          </div>
+
+          <p class="demo-note">
+            UddoktaPay payments are verified automatically against the
+            gateway; Transaction ID submissions and stuck gateway attempts
+            are reviewed here. An order is marked paid only when a payment is
+            verified on this page — there is no "mark paid" shortcut.
+          </p>
+
+          <form
+            class="admin-filters"
+            id="admin-payments-filters"
+            novalidate
+          >
+            <div class="form-field">
+              <label for="filter-provider">Provider</label>
+              <select id="filter-provider" name="provider">
+                <option value="all">All providers</option>
+                <option value="uddoktapay">UddoktaPay</option>
+                <option value="manual">Manual (Transaction ID)</option>
+                <option value="sslcommerz">SSLCommerz</option>
+                <option value="disabled">Disabled / legacy</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="filter-status">Status</label>
+              <select id="filter-status" name="status">
+                <option value="">All statuses</option>
+                <option value="awaiting_verification">Awaiting verification</option>
+                <option value="verified">Verified</option>
+                <option value="rejected">Rejected</option>
+                <option value="pending">Pending (gateway)</option>
+                <option value="initiated">Initiated (gateway)</option>
+                <option value="cancelled">Cancelled (gateway)</option>
+                <option value="expired">Expired (gateway)</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="filter-order">Order</label>
+              <input
+                type="text"
+                id="filter-order"
+                name="order"
+                placeholder="Order number or id"
+                maxlength="100"
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-field">
+              <label for="filter-customer">Customer</label>
+              <input
+                type="text"
+                id="filter-customer"
+                name="customer"
+                placeholder="Email or name"
+                maxlength="100"
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-field">
+              <label for="filter-transaction">Transaction</label>
+              <input
+                type="text"
+                id="filter-transaction"
+                name="transaction"
+                placeholder="Transaction / invoice id"
+                maxlength="100"
+                autocomplete="off"
+              />
+            </div>
+            <div class="admin-filter-actions">
+              <button class="btn btn-primary" type="submit">Apply</button>
+              <button
+                class="btn btn-outline"
+                type="button"
+                id="admin-payments-reset"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+
+          <p class="form-status" id="admin-payments-loading" hidden>
+            Loading payments…
+          </p>
+          <p
+            class="form-status form-status-empty"
+            id="admin-payments-empty"
+            hidden
+          ></p>
+
+          <section
+            class="admin-payment-detail"
+            id="admin-payments-detail"
+            hidden
+            aria-live="polite"
+          >
+            <div class="admin-detail-head">
+              <h2 id="admin-payments-detail-title">Payment details</h2>
+              <button
+                class="btn btn-outline btn-sm"
+                type="button"
+                id="admin-payments-detail-close"
+              >
+                Close
+              </button>
+            </div>
+            <p
+              class="form-status"
+              id="admin-payments-detail-status"
+              tabindex="-1"
+              hidden
+            ></p>
+            <dl class="admin-detail-dl" id="admin-payments-detail-fields"></dl>
+            <div
+              class="admin-detail-actions"
+              id="admin-payments-detail-actions"
+            ></div>
+
+            <form
+              class="admin-manual-verify"
+              id="admin-manual-verify-form"
+              novalidate
+              hidden
+            >
+              <p class="demo-note">
+                Confirm the exact amount and the reference you can see at the
+                bank or gateway. The server re-checks both against this
+                payment before anything can settle.
+              </p>
+              <div class="form-field">
+                <label for="manual-verify-transaction">Transaction / reference ID</label>
+                <input
+                  type="text"
+                  id="manual-verify-transaction"
+                  name="transactionId"
+                  maxlength="64"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="form-field">
+                <label for="manual-verify-amount">Exact amount</label>
+                <input
+                  type="text"
+                  id="manual-verify-amount"
+                  name="amount"
+                  maxlength="16"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="form-field">
+                <label for="manual-verify-currency">Currency</label>
+                <input
+                  type="text"
+                  id="manual-verify-currency"
+                  name="currency"
+                  maxlength="8"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="form-field">
+                <label for="manual-verify-note">Note (optional)</label>
+                <input
+                  type="text"
+                  id="manual-verify-note"
+                  name="note"
+                  maxlength="200"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="admin-detail-actions">
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  id="manual-verify-submit"
+                >
+                  Confirm manual verification
+                </button>
+                <button
+                  class="btn btn-outline"
+                  type="button"
+                  id="manual-verify-cancel"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table admin-table-orders">
+              <thead>
+                <tr>
+                  <th scope="col">Order</th>
+                  <th scope="col">Payment</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Provider</th>
+                  <th scope="col">Method</th>
+                  <th scope="col">Reference</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Updated</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-payments-tbody"></tbody>
+            </table>
+          </div>
+
+          <div class="admin-pagination">
+            <button class="btn btn-outline btn-sm" type="button" id="admin-payments-prev">
+              Previous
+            </button>
+            <span class="admin-pagination-info" id="admin-payments-page-info"></span>
+            <button class="btn btn-outline btn-sm" type="button" id="admin-payments-next">
+              Next
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/admin/js/admin-auth.js"></script>
+    <script src="/admin/js/admin-payments.js"></script>
+  </body>
+</html>

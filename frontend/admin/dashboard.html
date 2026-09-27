@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="ARC HOST administrator dashboard overview."
+    />
+    <title>Admin Dashboard — ARC HOST</title>
+    <link
+      rel="canonical"
+      href="https://billing.flarenodesbd.com/admin/dashboard"
+    />
+    <link rel="stylesheet" href="/admin/css/admin.css" />
+  </head>
+  <body class="admin-dashboard-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="admin-topbar">
+      <a class="admin-brand" href="/">
+        <span class="admin-brand-mark" aria-hidden="true">A</span>
+        <span>ARC <span class="admin-brand-thin">HOST</span></span>
+        <span class="admin-badge">Admin</span>
+      </a>
+
+      <div class="admin-topbar-actions">
+        <div class="admin-account-chip" id="admin-header-account">
+          <span class="admin-account-name" id="admin-user-name"></span>
+          <span class="admin-account-email" id="admin-user-email"></span>
+        </div>
+        <a class="btn btn-outline btn-sm" href="/">View Site</a>
+        <button
+          class="btn btn-primary btn-sm"
+          id="admin-logout-button"
+          type="button"
+        >
+          Logout
+        </button>
+        <button
+          class="admin-menu-toggle"
+          id="admin-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="admin-sidebar"
+        >
+          <span class="visually-hidden">Toggle admin menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-body" id="admin-dashboard-root">
+      <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin">
+        <nav aria-label="Admin sections">
+          <ul class="admin-nav">
+            <li class="admin-nav-label">Operations</li>
+            <li>
+              <a href="/admin/dashboard" aria-current="page">Dashboard</a>
+            </li>
+            <li>
+              <a href="/admin/customers">Customers</a>
+            </li>
+            <li>
+              <a href="/admin/orders">Orders</a>
+            </li>
+            <li>
+              <a href="/admin/payments">Payments</a>
+            </li>
+            <li class="admin-nav-label">Catalog</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Services</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li>
+              <a href="/admin/products?category=web">Hosting</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=vps">VPS</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=minecraft">Minecraft</a>
+            </li>
+            <li class="admin-nav-label">System</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Support</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Settings</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="admin-main" id="main-content">
+        <div class="admin-main-inner">
+          <p
+            class="form-status admin-status"
+            id="admin-dashboard-status"
+            tabindex="-1"
+            hidden
+          ></p>
+
+          <div class="admin-page-header">
+            <h1>Dashboard</h1>
+            <p class="admin-page-lead">
+              <span class="admin-health-dot" id="admin-health-dot"></span>
+              <span id="admin-health-status">Checking API…</span>
+            </p>
+          </div>
+
+          <section
+            class="admin-metrics"
+            aria-label="Key metrics"
+            id="admin-metrics"
+          >
+            <article class="metric-card">
+              <h2>Customers</h2>
+              <p class="metric-value" id="metric-customers">—</p>
+            </article>
+            <article class="metric-card">
+              <h2>Total orders</h2>
+              <p class="metric-value" id="metric-orders">—</p>
+            </article>
+            <article class="metric-card">
+              <h2>Awaiting payment</h2>
+              <p class="metric-value metric-warning" id="metric-awaiting">—</p>
+            </article>
+            <article class="metric-card">
+              <h2>Paid orders</h2>
+              <p class="metric-value metric-success" id="metric-paid">—</p>
+            </article>
+            <article class="metric-card">
+              <h2>Failed orders</h2>
+              <p class="metric-value metric-danger" id="metric-failed-orders">
+                —
+              </p>
+            </article>
+            <article class="metric-card">
+              <h2>Active services</h2>
+              <p class="metric-value metric-success" id="metric-active-services">
+                —
+              </p>
+            </article>
+            <article class="metric-card">
+              <h2>Provisioning</h2>
+              <p class="metric-value metric-warning" id="metric-provisioning">
+                —
+              </p>
+            </article>
+            <article class="metric-card">
+              <h2>Failed services</h2>
+              <p class="metric-value metric-danger" id="metric-failed-services">
+                —
+              </p>
+            </article>
+          </section>
+
+          <p class="admin-metrics-note" id="admin-metrics-note">
+            Live counts returned by the admin API.
+          </p>
+
+          <div class="admin-grid admin-grid-2">
+            <section
+              class="admin-card admin-card-span"
+              aria-labelledby="card-recent"
+            >
+              <div class="admin-card-header">
+                <h2 id="card-recent">Recent orders</h2>
+                <a class="btn btn-outline btn-sm" href="/admin/orders"
+                  >View all</a
+                >
+              </div>
+              <p
+                class="form-status"
+                id="admin-recent-orders-loading"
+                hidden
+              >
+                Loading…
+              </p>
+              <p
+                class="form-status form-status-empty"
+                id="admin-recent-orders-empty"
+                hidden
+              ></p>
+              <div class="admin-table-wrap">
+                <table class="admin-table admin-table-recent" id="admin-recent-orders-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Order</th>
+                      <th scope="col">Customer</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Created</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-recent-orders-body"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="admin-card" aria-labelledby="card-session">
+              <h2 id="card-session">Session</h2>
+              <p>Verified against the admin API.</p>
+              <ul class="admin-meta">
+                <li>
+                  <span class="label">User ID</span>
+                  <span class="value" id="admin-user-id">—</span>
+                </li>
+                <li>
+                  <span class="label">Role</span>
+                  <span class="value" id="admin-user-role">—</span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="admin-card" aria-labelledby="card-quick">
+              <h2 id="card-quick">Quick links</h2>
+              <ul class="admin-quick-links">
+                <li><a href="/admin/customers">All customers</a></li>
+                <li><a href="/admin/orders">All orders</a></li>
+                <li>
+                  <a href="/admin/orders?status=awaiting_payment"
+                    >Awaiting payment</a
+                  >
+                </li>
+                <li><a href="/admin/orders?status=paid">Paid orders</a></li>
+                <li><a href="/admin/orders?status=failed">Failed orders</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/admin/js/admin-auth.js"></script>
+    <script src="/admin/js/admin-dashboard.js"></script>
+  </body>
+</html>

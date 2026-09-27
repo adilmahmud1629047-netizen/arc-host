@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ARC HOST web hosting â€” websites, email, databases, storage, and SSL on plans that load live from the catalog. Compare tiers and start in one dashboard."
+    />
+    <title>Web Hosting | ARC HOST</title>
+    <!--
+      Canonical is deliberately RELATIVE until the client's final domain is
+      supplied. Set CLIENT_BRAND.origin in /js/client-config.js to emit an
+      absolute canonical URL â€” do not hardcode a third-party domain here.
+    -->
+    <link rel="canonical" href="/web-hosting" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client-theme.css" />
+  </head>
+  <body data-page-title="Web Hosting">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="/"
+          data-brand-label="{brand} â€” home"
+          aria-label="ARC HOST â€” home"
+        >
+          <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+          <span class="brand-text" data-brand-name>ARC HOST</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span class="visually-hidden">Menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting" aria-current="page">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+          <div class="nav-actions" data-auth-nav>
+            <div data-auth-anon>
+              <a class="cx-btn cx-btn--ghost cx-btn--sm" href="/login">Login</a>
+              <a class="cx-btn cx-btn--primary cx-btn--sm" href="/register"
+                >Get Started</a
+              >
+            </div>
+            <div data-auth-user hidden>
+              <a class="cx-btn cx-btn--dark cx-btn--sm" href="/dashboard">Dashboard</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ============================ HERO ============================ -->
+      <section class="cx-page-hero" aria-labelledby="wh-hero-title">
+        <div class="cx-container cx-page-grid">
+          <div>
+            <p class="cx-eyebrow" data-reveal="up">
+              <span class="cx-eyebrow-dot" aria-hidden="true"></span>
+              Web Hosting
+            </p>
+
+            <h1 id="wh-hero-title" data-reveal="up">
+              Your site, <em>on a plan that fits.</em>
+            </h1>
+
+            <p class="cx-lead" data-reveal="up">
+              Websites, email, databases, and storage in a single account.
+              Every price, limit, and billing cycle on this page is read live
+              from the catalog â€” nothing is typed in by hand.
+            </p>
+
+            <ul class="cx-badges" data-reveal="up">
+              <li>Websites</li>
+              <li>Email accounts</li>
+              <li>Databases</li>
+              <li>SSL listed per plan</li>
+            </ul>
+
+            <div class="cx-hero-actions" data-reveal="up">
+              <a class="cx-btn cx-btn--primary cx-btn--lg" href="#pricing"
+                >View plans</a
+              >
+              <a class="cx-btn cx-btn--outline cx-btn--lg" href="/register"
+                >Get started</a
+              >
+            </div>
+
+            <p class="cx-note" data-reveal="up">
+              Plans below load from the catalog API. Ordering and provisioning
+              connect when the platform goes live.
+            </p>
+          </div>
+
+          <div class="cx-split-body" data-stagger>
+            <article class="cx-block" data-reveal="left">
+              <span class="cx-block-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="16" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M7 6.5h.01" />
+                </svg>
+              </span>
+              <div>
+                <h3>Every limit, in plain numbers</h3>
+                <p>
+                  Websites, storage, bandwidth, email, databases, and SSL are
+                  listed for each tier â€” no surprises behind a "contact us".
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">01</span>
+            </article>
+
+            <article class="cx-block" data-reveal="left">
+              <span class="cx-block-icon cx-block-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </span>
+              <div>
+                <h3>SSL stated per plan</h3>
+                <p>
+                  If a tier includes SSL, the comparison table says so
+                  directly â€” read the row, not the marketing copy.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">02</span>
+            </article>
+
+            <article class="cx-block" data-reveal="left">
+              <span class="cx-block-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="7" rx="2" />
+                  <rect x="3" y="13" width="18" height="7" rx="2" />
+                  <path d="M7 7.5h.01M7 16.5h.01" />
+                </svg>
+              </span>
+              <div>
+                <h3>Room to grow</h3>
+                <p>
+                  Move up a web tier as the site grows, or step across to VPS
+                  hosting when you need your own isolated environment.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">03</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== PRICING ========================== -->
+      <section class="cx-section" id="pricing" aria-labelledby="wh-pricing-title">
+        <div class="cx-container">
+          <div class="cx-section-head cx-section-head--center" data-reveal="up">
+            <p class="cx-eyebrow">Pricing</p>
+            <h2 id="wh-pricing-title">Plans that load from the catalog</h2>
+            <p class="cx-lead">
+              Prices, billing cycles, and specifications are fetched from the
+              platform API when this page opens.
+            </p>
+          </div>
+
+          <div id="plans-root" data-plan-type="hosting" data-category="web">
+            <p
+              class="cx-status-msg"
+              id="plans-status"
+              tabindex="-1"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+
+            <div class="cx-plan-grid" id="plans-grid" data-stagger></div>
+
+            <div class="table-wrap" id="compare">
+              <table class="data-table" id="plans-compare" hidden>
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+
+            <p class="cx-pricing-footnote">
+              Currency, prices, billing cycles, and limits are supplied by the
+              server catalog. Ordering and provisioning finalize with the
+              billing system.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================= WHAT YOU GET ====================== -->
+      <section
+        class="cx-section cx-section--soft"
+        aria-labelledby="wh-features-title"
+      >
+        <div class="cx-container">
+          <div class="cx-section-head cx-section-head--center" data-reveal="up">
+            <p class="cx-eyebrow">What you get</p>
+            <h2 id="wh-features-title">The parts a website actually needs</h2>
+            <p class="cx-lead">
+              Each item below maps to a field in your plan â€” so the numbers you
+              read here are the numbers your account is billed against.
+            </p>
+          </div>
+
+          <div class="cx-feature-grid" data-stagger>
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="16" rx="2" />
+                  <path d="M3 9h18" />
+                </svg>
+              </span>
+              <h3>Websites per plan</h3>
+              <p>
+                Host the sites your tier allows â€” the exact count is printed on
+                every card and in the comparison table.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                </svg>
+              </span>
+              <h3>Email accounts</h3>
+              <p>
+                Mailboxes are listed per plan, so a shared address for the
+                business never depends on a hidden add-on.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <ellipse cx="12" cy="6" rx="8" ry="3" />
+                  <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" />
+                  <path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+                </svg>
+              </span>
+              <h3>Databases</h3>
+              <p>
+                Dynamic sites need somewhere to keep their data. Database
+                counts ship with each catalog tier.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </span>
+              <h3>SSL, where listed</h3>
+              <p>
+                Encrypted connections are marked on the tiers that include
+                them â€” check the SSL row before you order.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="7" rx="2" />
+                  <rect x="3" y="13" width="18" height="7" rx="2" />
+                  <path d="M7 7.5h.01M7 16.5h.01" />
+                </svg>
+              </span>
+              <h3>Storage &amp; bandwidth</h3>
+              <p>
+                Disk space and transfer appear on every plan, so you can match
+                a growing site to a tier before it runs out.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" />
+                  <path d="M3 8l3-4h12l3 4" />
+                  <path d="M12 11v5" />
+                  <path d="M9.5 13.5L12 11l2.5 2.5" />
+                </svg>
+              </span>
+              <h3>Backups &amp; protection</h3>
+              <p>
+                Daily snapshots and network filtering are platform defaults,
+                the same ones that guard Minecraft worlds here.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================= HOW IT WORKS ====================== -->
+      <section class="cx-section" aria-labelledby="wh-steps-title">
+        <div class="cx-container cx-split">
+          <div class="cx-split-lead" data-reveal="up">
+            <p class="cx-eyebrow">Getting started</p>
+            <h2 id="wh-steps-title">Three steps to a hosted site.</h2>
+            <p class="cx-lead">
+              Compare the catalog, create an account, and manage everything
+              from one dashboard â€” no separate control panel to learn first.
+            </p>
+            <a class="cx-text-link" href="/contact"
+              >Ask a question first<span aria-hidden="true">â†’</span></a
+            >
+          </div>
+
+          <div class="cx-split-body" data-stagger>
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 17l6-6 4 4 7-8" />
+                  <path d="M14 7h6v6" />
+                </svg>
+              </span>
+              <div>
+                <h3>Pick the tier that matches</h3>
+                <p>
+                  Read the live cards and the comparison table, then choose the
+                  plan that fits your site today.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">01</span>
+            </article>
+
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon cx-block-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1" />
+                </svg>
+              </span>
+              <div>
+                <h3>Create your account</h3>
+                <p>
+                  Registration takes a minute. Your plan is tied to the
+                  account, so everything stays in one place.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">02</span>
+            </article>
+
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="16" rx="2" />
+                  <path d="M7 9h10M7 13h6" />
+                </svg>
+              </span>
+              <div>
+                <h3>Manage from the dashboard</h3>
+                <p>
+                  Plans, orders, and account details live in the customer
+                  dashboard â€” the same place you will manage everything else.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">03</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== CLOSING CTA ====================== -->
+      <section class="cx-section" aria-labelledby="wh-cta-title">
+        <div class="cx-container">
+          <div class="cx-cta" data-reveal="up">
+            <div>
+              <p class="cx-eyebrow">Get started</p>
+              <h2 id="wh-cta-title">Ready to put your site online?</h2>
+              <p>
+                Compare the live catalog, pick a tier, and create an account â€”
+                payment options appear during checkout once payments are
+                enabled.
+              </p>
+            </div>
+            <div class="cx-cta-actions">
+              <a class="cx-btn cx-btn--primary cx-btn--lg" href="#pricing"
+                >View plans</a
+              >
+              <a class="cx-btn cx-btn--outline cx-btn--lg" href="/faq"
+                >Read the FAQ</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+            <span class="brand-text" data-brand-name>ARC HOST</span>
+          </a>
+          <p data-brand-tagline>
+            Minecraft, web, and VPS hosting on one platform
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Hosting</h2>
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Account</h2>
+          <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Get Started</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span data-current-year>2026</span>
+          <span data-brand-name>ARC HOST</span>. All rights reserved.
+        </p>
+        <p>Plans, features, and provisioning finalize at launch.</p>
+      </div>
+    </footer>
+
+    <script src="/js/client-config.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth-nav.js"></script>
+    <script src="/js/plans.js?v=7de4a49b"></script>
+    <script src="/js/motion.js"></script>
+  </body>
+</html>

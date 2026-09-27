@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Frequently asked questions about ARC HOST Minecraft hosting, web hosting, VPS hosting, accounts, and billing."
+    />
+    <title>FAQ | ARC HOST</title>
+    <!--
+      Canonical is deliberately RELATIVE until the client's final domain is
+      supplied. Set CLIENT_BRAND.origin in /js/client-config.js to emit an
+      absolute canonical URL — do not hardcode a third-party domain here.
+    -->
+    <link rel="canonical" href="/faq" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client-theme.css" />
+  </head>
+  <body data-page-title="FAQ">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="/"
+          data-brand-label="{brand} — home"
+          aria-label="ARC HOST — home"
+        >
+          <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+          <span class="brand-text" data-brand-name>ARC HOST</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span class="visually-hidden">Menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+          <div class="nav-actions" data-auth-nav>
+            <div data-auth-anon>
+              <a class="cx-btn cx-btn--ghost cx-btn--sm" href="/login">Login</a>
+              <a class="cx-btn cx-btn--primary cx-btn--sm" href="/register"
+                >Get Started</a
+              >
+            </div>
+            <div data-auth-user hidden>
+              <a class="cx-btn cx-btn--dark cx-btn--sm" href="/dashboard">Dashboard</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ============================ HERO ============================ -->
+      <section class="cx-page-hero" aria-labelledby="faq-hero-title">
+        <div class="cx-container">
+          <p class="cx-eyebrow" data-reveal="up">
+            <span class="cx-eyebrow-dot" aria-hidden="true"></span>
+            FAQ
+          </p>
+
+          <h1 id="faq-hero-title" data-reveal="up">
+            Straight answers, <em>including the "not yet" ones.</em>
+          </h1>
+
+          <p class="cx-lead" data-reveal="up">
+            What ARC HOST sells today, what the catalog actually returns, and
+            what is still waiting on provisioning and billing — answered the
+            same way on every page of this site.
+          </p>
+
+          <ul class="cx-badges" data-reveal="up">
+            <li>Products</li>
+            <li>Pricing</li>
+            <li>Accounts</li>
+            <li>Billing</li>
+          </ul>
+
+          <div class="cx-hero-actions" data-reveal="up">
+            <a class="cx-btn cx-btn--primary cx-btn--lg" href="#general"
+              >Browse questions</a
+            >
+            <a class="cx-btn cx-btn--outline cx-btn--lg" href="/contact"
+              >Ask something else</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== GENERAL ========================== -->
+      <section class="cx-section" id="general" aria-labelledby="faq-general-title">
+        <div class="cx-container">
+          <div class="cx-section-head" data-reveal="up">
+            <p class="cx-eyebrow">General</p>
+            <h2 id="faq-general-title">Getting started</h2>
+          </div>
+
+          <div class="accordion" data-stagger>
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-g1"
+                  id="faq-g1-btn"
+                >
+                  What is ARC HOST?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-g1"
+                role="region"
+                aria-labelledby="faq-g1-btn"
+                hidden
+              >
+                <p>
+                  ARC HOST is a hosting platform for Minecraft servers,
+                  websites, and virtual private servers. It combines this
+                  public site, a customer dashboard, and a plan catalog into
+                  one product as the platform rolls out.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-g2"
+                  id="faq-g2-btn"
+                >
+                  Should I choose web hosting or VPS hosting?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-g2"
+                role="region"
+                aria-labelledby="faq-g2-btn"
+                hidden
+              >
+                <p>
+                  Web hosting is the easier, more managed option for websites
+                  and small applications. Choose VPS hosting when you need
+                  isolated CPU, RAM, and storage for something you want to run
+                  end to end.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-g3"
+                  id="faq-g3-btn"
+                >
+                  Where are your servers located?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-g3"
+                role="region"
+                aria-labelledby="faq-g3-btn"
+                hidden
+              >
+                <p>
+                  Region slots shown on this site are placeholders. We only
+                  publish specific data center locations once they are actually
+                  configured — you will never find invented locations here.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-g4"
+                  id="faq-g4-btn"
+                >
+                  Do you guarantee uptime?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-g4"
+                role="region"
+                aria-labelledby="faq-g4-btn"
+                hidden
+              >
+                <p>
+                  Reliability is a core priority, but we do not publish uptime
+                  percentages or SLAs until they are backed by real
+                  infrastructure and measurable commitments. This FAQ is where
+                  that will be announced.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= WEB HOSTING ========================= -->
+      <section
+        class="cx-section cx-section--soft"
+        aria-labelledby="faq-web-title"
+      >
+        <div class="cx-container">
+          <div class="cx-section-head" data-reveal="up">
+            <p class="cx-eyebrow">Web Hosting</p>
+            <h2 id="faq-web-title">About our hosting plans</h2>
+          </div>
+
+          <div class="accordion" data-stagger>
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-w1"
+                  id="faq-w1-btn"
+                >
+                  What is web hosting?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-w1"
+                role="region"
+                aria-labelledby="faq-w1-btn"
+                hidden
+              >
+                <p>
+                  Web hosting is a service that stores your website's files and
+                  makes them available on the internet. ARC HOST web hosting
+                  plans handle the underlying server so you can focus on your
+                  site.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-w2"
+                  id="faq-w2-btn"
+                >
+                  Are the listed prices real?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-w2"
+                role="region"
+                aria-labelledby="faq-w2-btn"
+                hidden
+              >
+                <p>
+                  Every price, limit, and billing cycle on the product pages is
+                  read live from the catalog API when you open the page — there
+                  are no hand-typed figures. Final commercial terms publish with
+                  the billing system.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-w3"
+                  id="faq-w3-btn"
+                >
+                  Can I upgrade from web hosting to VPS later?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-w3"
+                role="region"
+                aria-labelledby="faq-w3-btn"
+                hidden
+              >
+                <p>
+                  An upgrade path from web hosting to VPS is part of the
+                  platform design. The migration flow will be detailed when the
+                  provisioning steps go live.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-w4"
+                  id="faq-w4-btn"
+                >
+                  Is SSL included?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-w4"
+                role="region"
+                aria-labelledby="faq-w4-btn"
+                hidden
+              >
+                <p>
+                  SSL is a catalog field, not a slogan: the comparison table on
+                  the web hosting page marks whether each tier includes it.
+                  Check the SSL row of the plan you are considering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================== VPS HOSTING ======================== -->
+      <section class="cx-section" aria-labelledby="faq-vps-title">
+        <div class="cx-container">
+          <div class="cx-section-head" data-reveal="up">
+            <p class="cx-eyebrow">VPS Hosting</p>
+            <h2 id="faq-vps-title">About our VPS plans</h2>
+          </div>
+
+          <div class="accordion" data-stagger>
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-v1"
+                  id="faq-v1-btn"
+                >
+                  What is a VPS?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-v1"
+                role="region"
+                aria-labelledby="faq-v1-btn"
+                hidden
+              >
+                <p>
+                  A Virtual Private Server is a virtualized server with its own
+                  allocation of CPU, RAM, storage, and network. It gives you
+                  more control and isolation than shared web hosting.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-v2"
+                  id="faq-v2-btn"
+                >
+                  Which operating systems can I choose?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-v2"
+                role="region"
+                aria-labelledby="faq-v2-btn"
+                hidden
+              >
+                <p>
+                  Operating system choices publish with provisioning. Until
+                  the platform returns a real list, this site will not name
+                  distributions or editions it cannot yet provide.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-v3"
+                  id="faq-v3-btn"
+                >
+                  Are the hardware specs final?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-v3"
+                role="region"
+                aria-labelledby="faq-v3-btn"
+                hidden
+              >
+                <p>
+                  The vCPU, RAM, storage, and bandwidth figures shown are the
+                  catalog's current values. Final hardware profiles publish when
+                  VPS provisioning goes live.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-v4"
+                  id="faq-v4-btn"
+                >
+                  Will I get root access?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-v4"
+                role="region"
+                aria-labelledby="faq-v4-btn"
+                hidden
+              >
+                <p>
+                  Access levels ship with the provisioning documentation. The
+                  plan cards list the resources we can guarantee today; the
+                  rest is confirmed when servers go live rather than promised
+                  ahead of time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ACCOUNTS & BILLING ==================== -->
+      <section
+        class="cx-section cx-section--soft"
+        aria-labelledby="faq-account-title"
+      >
+        <div class="cx-container">
+          <div class="cx-section-head" data-reveal="up">
+            <p class="cx-eyebrow">Accounts &amp; Billing</p>
+            <h2 id="faq-account-title">Accounts, payments, and support</h2>
+          </div>
+
+          <div class="accordion" data-stagger>
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-a1"
+                  id="faq-a1-btn"
+                >
+                  How do I create an account?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-a1"
+                role="region"
+                aria-labelledby="faq-a1-btn"
+                hidden
+              >
+                <p>
+                  Use "Get Started" in the navigation to register. Once you are
+                  signed in, your plans, orders, and account details live in the
+                  customer dashboard.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-a2"
+                  id="faq-a2-btn"
+                >
+                  Which payment methods do you accept?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-a2"
+                role="region"
+                aria-labelledby="faq-a2-btn"
+                hidden
+              >
+                <p>
+                  Payment options will be shown during checkout when payments
+                  are enabled. While payments are disabled, no method is
+                  advertised here — and we will never list one we cannot
+                  actually accept. Billing cycles and currencies always come
+                  from the plan catalog.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-a3"
+                  id="faq-a3-btn"
+                >
+                  How can I get support?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-a3"
+                role="region"
+                aria-labelledby="faq-a3-btn"
+                hidden
+              >
+                <p>
+                  Use the contact page — it is the single route for pre-sales
+                  and account questions today. After you have an account, the
+                  dashboard is where service messages will appear. We do not
+                  publish a phone number or mailbox we are not monitoring.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-reveal="up">
+              <h3>
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-a4"
+                  id="faq-a4-btn"
+                >
+                  Can I cancel anytime?
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion-panel"
+                id="faq-a4"
+                role="region"
+                aria-labelledby="faq-a4-btn"
+                hidden
+              >
+                <p>
+                  Cancellation and refund policies will be published alongside
+                  the billing system, before any real order can be placed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== CLOSING CTA ====================== -->
+      <section class="cx-section" aria-labelledby="faq-cta-title">
+        <div class="cx-container">
+          <div class="cx-cta" data-reveal="up">
+            <div>
+              <p class="cx-eyebrow">Still deciding?</p>
+              <h2 id="faq-cta-title">Ask us the question this page missed.</h2>
+              <p>
+                Send it through the contact page, or compare the live catalog
+                first — the answers are usually on the product page.
+              </p>
+            </div>
+            <div class="cx-cta-actions">
+              <a class="cx-btn cx-btn--primary cx-btn--lg" href="/contact"
+                >Contact us</a
+              >
+              <a class="cx-btn cx-btn--outline cx-btn--lg" href="/web-hosting"
+                >View plans</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+            <span class="brand-text" data-brand-name>ARC HOST</span>
+          </a>
+          <p data-brand-tagline>
+            Minecraft, web, and VPS hosting on one platform
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Hosting</h2>
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Account</h2>
+          <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Get Started</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span data-current-year>2026</span>
+          <span data-brand-name>ARC HOST</span>. All rights reserved.
+        </p>
+        <p>Plans, features, and provisioning finalize at launch.</p>
+      </div>
+    </footer>
+
+    <script src="/js/client-config.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth-nav.js"></script>
+    <script src="/js/motion.js"></script>
+  </body>
+</html>

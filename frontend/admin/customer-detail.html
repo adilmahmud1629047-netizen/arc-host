@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="ARC HOST admin customer detail."
+    />
+    <title>Customer Detail — Admin — ARC HOST</title>
+    <link
+      rel="canonical"
+      href="https://billing.flarenodesbd.com/admin/customers"
+    />
+    <link rel="stylesheet" href="/admin/css/admin.css" />
+  </head>
+  <body class="admin-dashboard-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="admin-topbar">
+      <a class="admin-brand" href="/">
+        <span class="admin-brand-mark" aria-hidden="true">A</span>
+        <span>ARC <span class="admin-brand-thin">HOST</span></span>
+        <span class="admin-badge">Admin</span>
+      </a>
+
+      <div class="admin-topbar-actions">
+        <div class="admin-account-chip" id="admin-header-account">
+          <span class="admin-account-name" id="admin-user-name"></span>
+          <span class="admin-account-email" id="admin-user-email"></span>
+        </div>
+        <a class="btn btn-outline btn-sm" href="/">View Site</a>
+        <button
+          class="btn btn-primary btn-sm"
+          id="admin-logout-button"
+          type="button"
+        >
+          Logout
+        </button>
+        <button
+          class="admin-menu-toggle"
+          id="admin-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="admin-sidebar"
+        >
+          <span class="visually-hidden">Toggle admin menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-body" id="admin-customer-detail-root" hidden>
+      <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin">
+        <nav aria-label="Admin sections">
+          <ul class="admin-nav">
+            <li class="admin-nav-label">Operations</li>
+            <li>
+              <a href="/admin/dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a href="/admin/customers" aria-current="page">Customers</a>
+            </li>
+            <li>
+              <a href="/admin/orders">Orders</a>
+            </li>
+            <li>
+              <a href="/admin/payments">Payments</a>
+            </li>
+            <li class="admin-nav-label">Catalog</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Services</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li>
+              <a href="/admin/products?category=web">Hosting</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=vps">VPS</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=minecraft">Minecraft</a>
+            </li>
+            <li class="admin-nav-label">System</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Support</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Settings</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="admin-main" id="main-content">
+        <div class="admin-main-inner">
+          <p
+            class="form-status admin-status"
+            id="admin-customer-status"
+            tabindex="-1"
+            hidden
+          ></p>
+
+          <div class="admin-page-header">
+            <div>
+              <a class="admin-back-link" href="/admin/customers"
+                >← Customers</a
+              >
+              <h1 id="admin-customer-title">Customer</h1>
+            </div>
+            <span class="status-badge" id="detail-customer-status-badge"
+              >—</span
+            >
+          </div>
+
+          <div class="admin-grid admin-grid-2">
+            <section class="admin-card" aria-labelledby="card-customer-info">
+              <h2 id="card-customer-info">Customer</h2>
+              <ul class="admin-meta">
+                <li>
+                  <span class="label">Name</span>
+                  <span class="value" id="detail-customer-name">—</span>
+                </li>
+                <li>
+                  <span class="label">Email</span>
+                  <span class="value" id="detail-customer-email">—</span>
+                </li>
+                <li>
+                  <span class="label">Customer ID</span>
+                  <span class="value" id="detail-customer-id">—</span>
+                </li>
+                <li>
+                  <span class="label">Account status</span>
+                  <span class="value" id="detail-customer-status">—</span>
+                </li>
+                <li>
+                  <span class="label">Role</span>
+                  <span class="value" id="detail-customer-role">—</span>
+                </li>
+                <li>
+                  <span class="label">Created</span>
+                  <span class="value" id="detail-customer-created">—</span>
+                </li>
+                <li>
+                  <span class="label">Updated</span>
+                  <span class="value" id="detail-customer-updated">—</span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="admin-card" aria-labelledby="card-summary">
+              <h2 id="card-summary">Summary</h2>
+              <ul class="admin-meta">
+                <li>
+                  <span class="label">Orders</span>
+                  <span class="value" id="detail-summary-orders">—</span>
+                </li>
+                <li>
+                  <span class="label">Paid orders</span>
+                  <span class="value" id="detail-summary-paid">—</span>
+                </li>
+                <li>
+                  <span class="label">Services</span>
+                  <span class="value" id="detail-summary-services">—</span>
+                </li>
+              </ul>
+            </section>
+
+            <section
+              class="admin-card admin-card-span"
+              aria-labelledby="card-account-actions"
+            >
+              <div class="admin-card-header">
+                <h2 id="card-account-actions">Account actions</h2>
+              </div>
+              <p class="admin-page-lead" id="account-actions-lead">
+                Suspending blocks sign-in and revokes every active session of
+                this account. Password reset issues a one-time temporary
+                password and signs all sessions out.
+              </p>
+              <div class="admin-detail-actions" id="admin-customer-actions">
+                <button
+                  class="btn btn-outline btn-sm"
+                  type="button"
+                  id="customer-suspend-action"
+                  hidden
+                >
+                  Suspend Customer
+                </button>
+                <button
+                  class="btn btn-primary btn-sm"
+                  type="button"
+                  id="customer-reactivate-action"
+                  hidden
+                >
+                  Reactivate Customer
+                </button>
+                <button
+                  class="btn btn-outline btn-sm"
+                  type="button"
+                  id="customer-reset-action"
+                  hidden
+                >
+                  Reset Password
+                </button>
+              </div>
+              <div
+                class="admin-reset-panel"
+                id="reset-password-panel"
+                hidden
+              >
+                <p class="admin-page-lead">
+                  One-time temporary password — deliver it to the customer
+                  through a secure channel. It will not be shown again.
+                </p>
+                <p class="admin-reset-value">
+                  <code id="reset-password-value"></code>
+                </p>
+                <button
+                  class="btn btn-outline btn-sm"
+                  type="button"
+                  id="reset-password-dismiss"
+                >
+                  Dismiss
+                </button>
+              </div>
+            </section>
+
+            <section
+              class="admin-card admin-card-span"
+              aria-labelledby="card-recent-orders"
+            >
+              <div class="admin-card-header">
+                <h2 id="card-recent-orders">Order history</h2>
+                <a
+                  class="btn btn-outline btn-sm"
+                  id="admin-customer-orders-link"
+                  href="/admin/orders"
+                  >View all orders</a
+                >
+              </div>
+              <p
+                class="form-status form-status-empty"
+                id="admin-customer-orders-empty"
+                hidden
+              >
+                No orders yet.
+              </p>
+              <div class="admin-table-wrap">
+                <table class="admin-table admin-table-customer-orders">
+                  <thead>
+                    <tr>
+                      <th scope="col">Order</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Plan</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Payment</th>
+                      <th scope="col">Created</th>
+                      <th scope="col">Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-customer-orders-tbody"></tbody>
+                </table>
+              </div>
+              <div class="admin-pagination">
+                <button
+                  class="btn btn-outline btn-sm"
+                  type="button"
+                  id="admin-customer-orders-prev"
+                >
+                  Previous
+                </button>
+                <span
+                  class="admin-pagination-info"
+                  id="admin-customer-orders-page-info"
+                ></span>
+                <button
+                  class="btn btn-outline btn-sm"
+                  type="button"
+                  id="admin-customer-orders-next"
+                >
+                  Next
+                </button>
+              </div>
+            </section>
+
+            <section
+              class="admin-card admin-card-span"
+              aria-labelledby="card-payments"
+            >
+              <div class="admin-card-header">
+                <h2 id="card-payments">Payment history</h2>
+                <a
+                  class="btn btn-outline btn-sm"
+                  id="admin-customer-payments-link"
+                  href="/admin/payments"
+                  >View all payments</a
+                >
+              </div>
+              <p
+                class="form-status form-status-empty"
+                id="admin-customer-payments-empty"
+                hidden
+              >
+                No payments recorded.
+              </p>
+              <div class="admin-table-wrap">
+                <table class="admin-table admin-table-customer-payments">
+                  <thead>
+                    <tr>
+                      <th scope="col">Payment</th>
+                      <th scope="col">Order</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Provider</th>
+                      <th scope="col">Method</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Reference</th>
+                      <th scope="col">Source</th>
+                      <th scope="col">Created</th>
+                      <th scope="col">Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-customer-payments-tbody"></tbody>
+                </table>
+              </div>
+              <div class="admin-pagination">
+                <button
+                  class="btn btn-outline btn-sm"
+                  type="button"
+                  id="admin-customer-payments-prev"
+                >
+                  Previous
+                </button>
+                <span
+                  class="admin-pagination-info"
+                  id="admin-customer-payments-page-info"
+                ></span>
+                <button
+                  class="btn btn-outline btn-sm"
+                  type="button"
+                  id="admin-customer-payments-next"
+                >
+                  Next
+                </button>
+              </div>
+            </section>
+
+            <section
+              class="admin-card admin-card-span"
+              aria-labelledby="card-services"
+            >
+              <h2 id="card-services">Services</h2>
+              <p
+                class="form-status form-status-empty"
+                id="admin-customer-services-empty"
+                hidden
+              >
+                No services yet.
+              </p>
+              <div class="admin-table-wrap">
+                <table class="admin-table admin-table-customer-services">
+                  <thead>
+                    <tr>
+                      <th scope="col">Service ID</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Plan</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Created</th>
+                      <th scope="col">Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-customer-services-tbody"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/admin/js/admin-auth.js"></script>
+    <script src="/admin/js/admin-customer-detail.js"></script>
+  </body>
+</html>

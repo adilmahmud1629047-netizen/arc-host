@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="ARC HOST administrator sign-in."
+    />
+    <title>Admin Login — ARC HOST</title>
+    <link rel="canonical" href="https://billing.flarenodesbd.com/admin/login" />
+    <link rel="stylesheet" href="/admin/css/admin.css" />
+  </head>
+  <body class="admin-login-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="admin-login-shell">
+      <header class="admin-login-header">
+        <a class="admin-brand" href="/">
+          <span class="admin-brand-mark" aria-hidden="true">A</span>
+          <span>ARC <span class="admin-brand-thin">HOST</span></span>
+          <span class="admin-badge">Admin</span>
+        </a>
+      </header>
+
+      <main class="admin-login-main" id="main-content">
+        <section class="admin-login-card" aria-labelledby="admin-login-title">
+          <h1 id="admin-login-title">Administrator sign-in</h1>
+          <p class="lead">
+            Restricted area. Use an account with the admin role.
+          </p>
+
+          <p
+            class="form-status"
+            id="admin-login-status"
+            tabindex="-1"
+            hidden
+          ></p>
+
+          <form id="admin-login-form" novalidate>
+            <div class="form-field">
+              <label for="admin-login-email">Email address</label>
+              <input
+                type="email"
+                id="admin-login-email"
+                name="email"
+                autocomplete="username"
+                required
+                maxlength="320"
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="admin-login-password">Password</label>
+              <input
+                type="password"
+                id="admin-login-password"
+                name="password"
+                autocomplete="current-password"
+                required
+                maxlength="128"
+              />
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit">
+              Sign In
+            </button>
+          </form>
+
+          <p class="lead admin-login-back">
+            <a href="/">← Back to site</a>
+          </p>
+        </section>
+      </main>
+
+      <footer class="admin-login-footer">
+        &copy; 2026 ARC HOST · Administrator access only
+      </footer>
+    </div>
+
+    <script src="/admin/js/admin-auth.js"></script>
+  </body>
+</html>

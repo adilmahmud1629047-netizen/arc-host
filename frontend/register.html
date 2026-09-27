@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create your ARC HOST customer account to order and manage Minecraft, web, and VPS hosting."
+    />
+    <title>Get Started | ARC HOST</title>
+    <!--
+      Canonical is deliberately RELATIVE until the client's final domain is
+      supplied. Set CLIENT_BRAND.origin in /js/client-config.js to emit an
+      absolute canonical URL — do not hardcode a third-party domain here.
+    -->
+    <link rel="canonical" href="/register" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client-theme.css" />
+  </head>
+  <body data-page-title="Get Started">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="/"
+          data-brand-label="{brand} — home"
+          aria-label="ARC HOST — home"
+        >
+          <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+          <span class="brand-text" data-brand-name>ARC HOST</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span class="visually-hidden">Menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+          <div class="nav-actions" data-auth-nav>
+            <div data-auth-anon>
+              <a class="cx-btn cx-btn--ghost cx-btn--sm" href="/login">Login</a>
+              <a
+                class="cx-btn cx-btn--primary cx-btn--sm"
+                href="/register"
+                aria-current="page"
+                >Get Started</a
+              >
+            </div>
+            <div data-auth-user hidden>
+              <a class="cx-btn cx-btn--dark cx-btn--sm" href="/dashboard">Dashboard</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="cx-auth" aria-labelledby="register-title">
+        <div class="cx-container cx-auth-grid">
+          <div class="cx-auth-copy">
+            <p class="cx-eyebrow">
+              <span class="cx-eyebrow-dot" aria-hidden="true"></span>
+              Account
+            </p>
+
+            <h1 id="register-title">Create your account</h1>
+
+            <p class="cx-lead">
+              One account covers Minecraft, web, and VPS hosting — plans,
+              orders, and services are all managed from the same dashboard.
+            </p>
+
+            <ul class="cx-auth-points">
+              <li>
+                <strong>Four fields.</strong> Name, email, and password — no
+                form longer than it needs to be.
+              </li>
+              <li>
+                <strong>Password rules up front.</strong> At least 12
+                characters with an uppercase letter, a lowercase letter, and a
+                digit.
+              </li>
+              <li>
+                <strong>Catalog pricing.</strong> Prices and specifications
+                are read from the live catalog, never typed into the page.
+              </li>
+            </ul>
+
+            <p class="cx-auth-alt">
+              Already registered?
+              <a class="cx-text-link" href="/login">Sign in</a>
+            </p>
+          </div>
+
+          <article class="cx-auth-card">
+            <p class="cx-eyebrow">Register</p>
+            <h2>Get started</h2>
+
+            <form id="register-form" class="cx-form" novalidate>
+              <p
+                class="form-status"
+                id="register-status"
+                tabindex="-1"
+                hidden
+              ></p>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="register-first-name">First name</label>
+                  <input
+                    type="text"
+                    id="register-first-name"
+                    name="firstName"
+                    autocomplete="given-name"
+                    required
+                    maxlength="100"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="register-last-name">Last name</label>
+                  <input
+                    type="text"
+                    id="register-last-name"
+                    name="lastName"
+                    autocomplete="family-name"
+                    required
+                    maxlength="100"
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="register-email">Email address</label>
+                <input
+                  type="email"
+                  id="register-email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  maxlength="320"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="register-password">Password</label>
+                <input
+                  type="password"
+                  id="register-password"
+                  name="password"
+                  autocomplete="new-password"
+                  required
+                  minlength="12"
+                  maxlength="128"
+                />
+                <span class="password-hint"
+                  >At least 12 characters with an uppercase letter, a lowercase
+                  letter, and a digit.</span
+                >
+              </div>
+
+              <button
+                class="cx-btn cx-btn--primary cx-btn--block"
+                type="submit"
+              >
+                Create Account
+              </button>
+            </form>
+
+            <p class="form-links">
+              Already have an account? <a href="/login">Sign in</a>
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+            <span class="brand-text" data-brand-name>ARC HOST</span>
+          </a>
+          <p data-brand-tagline>
+            Minecraft, web, and VPS hosting on one platform
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Hosting</h2>
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Account</h2>
+          <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Get Started</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span data-current-year>2026</span>
+          <span data-brand-name>ARC HOST</span>. All rights reserved.
+        </p>
+        <p>Plans, features, and provisioning finalize at launch.</p>
+      </div>
+    </footer>
+
+    <script src="/js/client-config.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth-nav.js"></script>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

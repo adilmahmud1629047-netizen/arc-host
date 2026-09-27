@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ARC HOST — Minecraft server hosting for Java and Bedrock: start small, scale RAM and CPU, daily backups, DDoS protection, and simple server management."
+    />
+    <title>Minecraft Hosting Built to Scale | ARC HOST</title>
+    <!--
+      Canonical is deliberately RELATIVE until the client's final domain is
+      supplied. Set CLIENT_BRAND.origin in /js/client-config.js to emit an
+      absolute canonical URL — do not hardcode a third-party domain here.
+    -->
+    <link rel="canonical" href="/" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client-theme.css" />
+  </head>
+  <body data-page-title="Minecraft Hosting Built to Scale">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="/"
+          data-brand-label="{brand} — home"
+          aria-label="ARC HOST — home"
+        >
+          <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+          <span class="brand-text" data-brand-name>ARC HOST</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span class="visually-hidden">Menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+          <div class="nav-actions" data-auth-nav>
+            <div data-auth-anon>
+              <a class="cx-btn cx-btn--ghost cx-btn--sm" href="/login">Login</a>
+              <a class="cx-btn cx-btn--primary cx-btn--sm" href="/register"
+                >Get Started</a
+              >
+            </div>
+            <div data-auth-user hidden>
+              <a class="cx-btn cx-btn--dark cx-btn--sm" href="/dashboard">Dashboard</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ============================ HERO ============================ -->
+      <section class="cx-hero" aria-labelledby="hero-title">
+        <div class="cx-container cx-hero-grid">
+          <div class="cx-hero-copy">
+            <p class="cx-eyebrow" data-reveal="up">
+              <span class="cx-eyebrow-dot" aria-hidden="true"></span>
+              Premium Minecraft Hosting
+            </p>
+
+            <h1 id="hero-title" data-reveal="up">
+              Minecraft server hosting that <span class="accent">scales as you play</span>
+            </h1>
+
+            <p class="cx-lead" data-reveal="up">
+              Java and Bedrock support, room to grow from a small private world
+              to a busy community, daily backups, DDoS protection, and a
+              management surface that stays out of your way.
+            </p>
+
+            <ul class="cx-hero-points" data-reveal="up">
+              <li>Java + Bedrock</li>
+              <li>NVMe storage</li>
+              <li>DDoS protection</li>
+              <li>Daily backups</li>
+            </ul>
+
+            <div class="cx-hero-actions" data-reveal="up">
+              <a
+                class="cx-btn cx-btn--primary cx-btn--lg"
+                href="/register"
+                data-auth-cta="get-started"
+                >Start your Minecraft server</a
+              >
+              <a
+                class="cx-btn cx-btn--outline cx-btn--lg"
+                href="/minecraft-hosting#pricing"
+                >Compare plans</a
+              >
+            </div>
+
+            <dl class="cx-hero-meta" data-reveal="up">
+              <div>
+                <dt>Start small</dt>
+                <dd>From 2 GB RAM</dd>
+              </div>
+              <div>
+                <dt>Scale</dt>
+                <dd>RAM + CPU tiers</dd>
+              </div>
+              <div>
+                <dt>Protection</dt>
+                <dd>DDoS filtered</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Product mockup: UI illustration only, no live behaviour. -->
+          <div class="cx-hero-visual" data-reveal="left">
+            <div class="cx-mock" aria-hidden="true">
+              <div class="cx-mock-bar">
+                <span class="cx-mock-dots"><i></i><i></i><i></i></span>
+                <p class="cx-mock-title">Server configurator</p>
+                <span class="cx-mock-pill">Ready</span>
+              </div>
+
+              <div class="cx-mock-body">
+                <div>
+                  <span class="cx-mock-label">Application</span>
+                  <div class="cx-mock-chips">
+                    <span class="cx-mock-chip is-on"
+                      ><img
+                        class="cx-chip-icon"
+                        src="/images/software/vanilla-java.svg"
+                        alt=""
+                        width="18"
+                        height="18"
+                        decoding="async"
+                      />Vanilla Java</span
+                    >
+                    <span class="cx-mock-chip"
+                      ><img
+                        class="cx-chip-icon"
+                        src="/images/software/paper.svg"
+                        alt=""
+                        width="18"
+                        height="18"
+                        decoding="async"
+                      />Paper</span
+                    >
+                    <span class="cx-mock-chip"
+                      ><img
+                        class="cx-chip-icon"
+                        src="/images/software/fabric.svg"
+                        alt=""
+                        width="18"
+                        height="18"
+                        decoding="async"
+                    />Fabric</span>
+                  </div>
+                </div>
+
+                <div class="cx-mock-fields">
+                  <div class="cx-mock-field">
+                    <span>Version</span>
+                    <strong>1.21.4</strong>
+                  </div>
+                  <div class="cx-mock-field">
+                    <span>Region</span>
+                    <strong>Select a region</strong>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="cx-mock-label">Resources</span>
+                  <div class="cx-mock-res">
+                    <div class="cx-mock-res-row">
+                      <span>2 vCPU</span>
+                      <span>4 GB RAM</span>
+                      <span>40 GB NVMe</span>
+                    </div>
+                    <div class="cx-mock-meter"><i></i></div>
+                  </div>
+                </div>
+
+                <div class="cx-mock-foot">
+                  <span class="cx-mock-status"><i></i>Online · 0 players</span>
+                  <span class="cx-mock-cta">Create server →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================= TRUST STRIP ========================= -->
+      <section class="cx-trust" aria-label="Platform benefits">
+        <div class="cx-container">
+          <ul class="cx-trust-list">
+            <li class="cx-trust-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" />
+                <path d="M3 8l3-4h12l3 4" />
+                <path d="M12 11v5" />
+                <path d="M9.5 13.5L12 11l2.5 2.5" />
+              </svg>
+              Daily backups
+            </li>
+            <li class="cx-trust-item cx-trust-item--teal">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              DDoS protection
+            </li>
+            <li class="cx-trust-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+              24/7 availability
+            </li>
+            <li class="cx-trust-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="4" width="18" height="7" rx="2" />
+                <rect x="3" y="13" width="18" height="7" rx="2" />
+                <path d="M7 7.5h.01M7 16.5h.01" />
+              </svg>
+              NVMe storage
+            </li>
+            <li class="cx-trust-item cx-trust-item--teal">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 6h16M4 12h10M4 18h7" />
+                <circle cx="18" cy="17" r="3" />
+                <path d="M20.5 19.5L22 21" />
+              </svg>
+              Easy server management
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== WHY THIS HOSTING ======================= -->
+      <section class="cx-section" id="why" aria-labelledby="why-title">
+        <div class="cx-container cx-split">
+          <div class="cx-split-lead" data-reveal="up">
+            <p class="cx-eyebrow">Why this hosting</p>
+            <h2 id="why-title">Hosting without the infrastructure management.</h2>
+            <p class="cx-lead">
+              You bring the world; we handle the boring parts. No rack
+              diagrams, no patch windows, no midnight disk hunts — just a
+              server you can start, tune, and grow.
+            </p>
+            <a class="cx-text-link" href="/minecraft-hosting"
+              >Explore Minecraft Hosting<span aria-hidden="true">→</span></a
+            >
+          </div>
+
+          <div class="cx-split-body" data-stagger>
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="8" height="8" rx="1.5" />
+                  <rect x="13" y="3" width="8" height="8" rx="1.5" />
+                  <rect x="3" y="13" width="8" height="8" rx="1.5" />
+                  <rect x="13" y="13" width="8" height="8" rx="1.5" />
+                </svg>
+              </span>
+              <div>
+                <h3>Choose your Minecraft setup</h3>
+                <p>
+                  Java or Bedrock, then vanilla, plugins, or mods. Pick the
+                  application that matches how your community plays.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">01</span>
+            </article>
+
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon cx-block-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 5l14 7-14 7V5z" />
+                </svg>
+              </span>
+              <div>
+                <h3>Launch and manage your server</h3>
+                <p>
+                  One dashboard for start, stop, files, and backups — so
+                  running a world never becomes a second hobby.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">02</span>
+            </article>
+
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 17l6-6 4 4 7-8" />
+                  <path d="M14 7h6v6" />
+                </svg>
+              </span>
+              <div>
+                <h3>Scale resources when needed</h3>
+                <p>
+                  Start on a small tier and move up to more RAM and CPU when
+                  the player list grows — same world, same workflow.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">03</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= FEATURES GRID ======================= -->
+      <section
+        class="cx-section cx-section--soft"
+        id="features"
+        aria-labelledby="features-title"
+      >
+        <div class="cx-container">
+          <div class="cx-section-head cx-section-head--center" data-reveal="up">
+            <p class="cx-eyebrow">Everything included</p>
+            <h2 id="features-title">Built for the way communities play</h2>
+            <p class="cx-lead">
+              The essentials a Minecraft world needs, gathered in one place —
+              no add-on maze, no surprise line items.
+            </p>
+          </div>
+
+          <div class="cx-feature-grid" data-stagger>
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </span>
+              <h3>Unlimited player slots</h3>
+              <p>
+                Invite the whole community — seats are not metered, so a busy
+                night never triggers an upgrade prompt.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 17l6-6 4 4 7-8" />
+                  <path d="M14 7h6v6" />
+                </svg>
+              </span>
+              <h3>Scale resources</h3>
+              <p>
+                Move between RAM and CPU tiers as your world grows, keeping the
+                same files, world data, and settings.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon cx-card-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </span>
+              <h3>Run 24/7</h3>
+              <p>
+                Your world stays reachable around the clock so players in any
+                time zone can drop in whenever they like.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" />
+                  <path d="M3 8l3-4h12l3 4" />
+                  <path d="M12 11v5" />
+                  <path d="M9.5 13.5L12 11l2.5 2.5" />
+                </svg>
+              </span>
+              <h3>Managed backups</h3>
+              <p>
+                Daily snapshots of your world mean a bad mod test or a
+                griefing incident is a restore away, not a rebuild.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 4h6l2 3h8v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4z" />
+                  <path d="M9 14l2 2 4-4" />
+                </svg>
+              </span>
+              <h3>Files and SFTP</h3>
+              <p>
+                Reach world files, configs, and logs directly over SFTP when
+                you want to work outside the panel.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon cx-card-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="8" cy="8" r="3" />
+                  <circle cx="17" cy="16" r="3" />
+                  <path d="M10.5 9.5L14.5 14.5" />
+                </svg>
+              </span>
+              <h3>Team access</h3>
+              <p>
+                Bring moderators and builders in with their own access, so you
+                are never the only admin awake.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon cx-card-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </span>
+              <h3>DDoS protection</h3>
+              <p>
+                Traffic filtering in front of your server helps keep the world
+                online when unwanted attention shows up.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="5" width="18" height="6" rx="2" />
+                  <rect x="3" y="13" width="18" height="6" rx="2" />
+                  <path d="M7 8h.01M7 16h.01" />
+                </svg>
+              </span>
+              <h3>Network ports</h3>
+              <p>
+                Open the extra ports your mods, plugins, and companion tools
+                need alongside the main game port.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z" />
+                </svg>
+              </span>
+              <h3>Support</h3>
+              <p>
+                Stuck on a config or a migration? Reach a human through the
+                support page instead of a knowledge-base maze.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= MINECRAFT CTA ======================= -->
+      <section class="cx-section" aria-labelledby="home-cta-title">
+        <div class="cx-container">
+          <div class="cx-cta" data-reveal="up">
+            <div>
+              <p class="cx-eyebrow">Get started</p>
+              <h2 id="home-cta-title">Ready to launch your server?</h2>
+              <p>
+                Pick a plan, choose your application, and your world is one
+                step away. Start small and scale whenever your community does.
+              </p>
+            </div>
+            <div class="cx-cta-actions">
+              <a
+                class="cx-btn cx-btn--primary cx-btn--lg"
+                data-auth-cta="get-started"
+                href="/register"
+                >Start your server</a
+              >
+              <a
+                class="cx-btn cx-btn--outline cx-btn--lg"
+                href="/minecraft-hosting#pricing"
+                >View plans</a
+              >
+            </div>
+          </div>
+
+          <p class="cx-pricing-footnote">
+            Minecraft server provisioning and final commercial terms publish
+            with the billing system. Not affiliated with Mojang or Microsoft.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+            <span class="brand-text" data-brand-name>ARC HOST</span>
+          </a>
+          <p data-brand-tagline>
+            Minecraft, web, and VPS hosting on one platform
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Hosting</h2>
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+            <li><a href="/minecraft-hosting#features">Features</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Account</h2>
+          <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Get Started</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span data-current-year>2026</span>
+          <span data-brand-name>ARC HOST</span>. All rights reserved.
+        </p>
+        <p>Plans, features, and provisioning finalize at launch.</p>
+      </div>
+    </footer>
+
+    <script src="/js/client-config.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth-nav.js"></script>
+    <script src="/js/motion.js"></script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="ARC HOST admin order management." />
+    <title>Orders — Admin — ARC HOST</title>
+    <link rel="canonical" href="https://billing.flarenodesbd.com/admin/orders" />
+    <link rel="stylesheet" href="/admin/css/admin.css" />
+  </head>
+  <body class="admin-dashboard-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="admin-topbar">
+      <a class="admin-brand" href="/">
+        <span class="admin-brand-mark" aria-hidden="true">A</span>
+        <span>ARC <span class="admin-brand-thin">HOST</span></span>
+        <span class="admin-badge">Admin</span>
+      </a>
+
+      <div class="admin-topbar-actions">
+        <div class="admin-account-chip" id="admin-header-account">
+          <span class="admin-account-name" id="admin-user-name"></span>
+          <span class="admin-account-email" id="admin-user-email"></span>
+        </div>
+        <a class="btn btn-outline btn-sm" href="/">View Site</a>
+        <button
+          class="btn btn-primary btn-sm"
+          id="admin-logout-button"
+          type="button"
+        >
+          Logout
+        </button>
+        <button
+          class="admin-menu-toggle"
+          id="admin-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="admin-sidebar"
+        >
+          <span class="visually-hidden">Toggle admin menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-body" id="admin-orders-root">
+      <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin">
+        <nav aria-label="Admin sections">
+          <ul class="admin-nav">
+            <li class="admin-nav-label">Operations</li>
+            <li>
+              <a href="/admin/dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a href="/admin/customers">Customers</a>
+            </li>
+            <li>
+              <a href="/admin/orders" aria-current="page">Orders</a>
+            </li>
+            <li>
+              <a href="/admin/payments">Payments</a>
+            </li>
+            <li class="admin-nav-label">Catalog</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Services</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li>
+              <a href="/admin/products?category=web">Hosting</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=vps">VPS</a>
+            </li>
+            <li>
+              <a href="/admin/products?category=minecraft">Minecraft</a>
+            </li>
+            <li class="admin-nav-label">System</li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Support</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+            <li class="admin-nav-unavailable">
+              <span class="admin-nav-item is-disabled" aria-disabled="true"
+                >Settings</span
+              >
+              <span class="admin-nav-note">Not connected yet</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="admin-main" id="main-content">
+        <div class="admin-main-inner">
+          <p
+            class="form-status admin-status"
+            id="admin-orders-status"
+            tabindex="-1"
+            hidden
+          ></p>
+
+          <div class="admin-page-header">
+            <div>
+              <h1>Orders</h1>
+              <p class="admin-page-lead" id="admin-orders-summary">…</p>
+            </div>
+            <a class="btn btn-outline btn-sm" href="/admin/dashboard"
+              >← Dashboard</a
+            >
+          </div>
+
+          <form
+            class="admin-filters"
+            id="admin-orders-filters"
+            novalidate
+          >
+            <div class="form-field">
+              <label for="filter-status">Status</label>
+              <select id="filter-status" name="status">
+                <option value="">All statuses</option>
+                <option value="awaiting_payment">Awaiting payment</option>
+                <option value="paid">Paid</option>
+                <option value="pending">Pending</option>
+                <option value="cancelled">Cancelled</option>
+                <option value="failed">Failed</option>
+                <option value="refunded">Refunded</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="filter-product">Product</label>
+              <select id="filter-product" name="productType">
+                <option value="">All products</option>
+                <option value="hosting">Hosting</option>
+                <option value="vps">VPS</option>
+              </select>
+            </div>
+            <div class="form-field form-field-grow">
+              <label for="filter-search">Search</label>
+              <input
+                type="search"
+                id="filter-search"
+                name="search"
+                placeholder="Order number or customer email"
+                maxlength="100"
+                autocomplete="off"
+              />
+            </div>
+            <div class="admin-filter-actions">
+              <button class="btn btn-primary" type="submit">Apply</button>
+              <button
+                class="btn btn-outline"
+                type="button"
+                id="admin-orders-reset"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+
+          <p class="form-status" id="admin-orders-loading" hidden>
+            Loading orders…
+          </p>
+          <p
+            class="form-status form-status-empty"
+            id="admin-orders-empty"
+            hidden
+          ></p>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table admin-table-orders">
+              <thead>
+                <tr>
+                  <th scope="col">Order</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Created</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-orders-tbody"></tbody>
+            </table>
+          </div>
+
+          <div class="admin-pagination">
+            <button class="btn btn-outline btn-sm" type="button" id="admin-orders-prev">
+              Previous
+            </button>
+            <span class="admin-pagination-info" id="admin-orders-page-info"></span>
+            <button class="btn btn-outline btn-sm" type="button" id="admin-orders-next">
+              Next
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/admin/js/admin-auth.js"></script>
+    <script src="/admin/js/admin-orders.js"></script>
+  </body>
+</html>

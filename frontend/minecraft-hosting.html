@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ARC HOST Minecraft hosting for Java and Bedrock â€” configure your application, compare live plan pricing, and scale RAM, CPU, and storage as your world grows."
+    />
+    <title>Minecraft Server Hosting | ARC HOST</title>
+    <!--
+      Canonical is deliberately RELATIVE until the client's final domain is
+      supplied. Set CLIENT_BRAND.origin in /js/client-config.js to emit an
+      absolute canonical URL â€” do not hardcode a third-party domain here.
+    -->
+    <link rel="canonical" href="/minecraft-hosting" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client-theme.css" />
+  </head>
+  <body data-page-title="Minecraft Server Hosting">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="/"
+          data-brand-label="{brand} â€” home"
+          aria-label="ARC HOST â€” home"
+        >
+          <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+          <span class="brand-text" data-brand-name>ARC HOST</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span class="visually-hidden">Menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li>
+              <a href="/minecraft-hosting" aria-current="page"
+                >Minecraft Hosting</a
+              >
+            </li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+          <div class="nav-actions" data-auth-nav>
+            <div data-auth-anon>
+              <a class="cx-btn cx-btn--ghost cx-btn--sm" href="/login">Login</a>
+              <a class="cx-btn cx-btn--primary cx-btn--sm" href="/register"
+                >Get Started</a
+              >
+            </div>
+            <div data-auth-user hidden>
+              <a class="cx-btn cx-btn--dark cx-btn--sm" href="/dashboard">Dashboard</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ==================== HERO + CONFIGURATOR ==================== -->
+      <section class="cx-page-hero" aria-labelledby="mc-hero-title">
+        <div class="cx-container cx-page-grid">
+          <div>
+            <p class="cx-eyebrow" data-reveal="up">
+              <span class="cx-eyebrow-dot" aria-hidden="true"></span>
+              Minecraft Java + Bedrock Hosting
+            </p>
+
+            <h1 id="mc-hero-title" data-reveal="up">
+              Choose your setup. <em>We handle the server.</em>
+            </h1>
+
+            <p class="cx-lead" data-reveal="up">
+              Java and Bedrock support, plugin and mod friendly applications,
+              NVMe storage, and tiers you can grow into â€” configured in one
+              card and managed from a single dashboard.
+            </p>
+
+            <ul class="cx-badges" data-reveal="up">
+              <li>Java + Bedrock</li>
+              <li>Plugins &amp; mods</li>
+              <li>NVMe storage</li>
+              <li>Daily backups</li>
+            </ul>
+
+            <div class="cx-hero-actions" data-reveal="up">
+              <a class="cx-btn cx-btn--primary cx-btn--lg" href="#configurator"
+                >Configure your server</a
+              >
+              <a class="cx-btn cx-btn--outline cx-btn--lg" href="#pricing"
+                >View plans</a
+              >
+            </div>
+
+            <p class="cx-note" data-reveal="up">
+              Plans below are loaded live from the catalog API. Provisioning
+              connects when the platform goes live.
+            </p>
+          </div>
+
+          <!-- Interactive-looking configurator (UI only â€” no backend calls). -->
+          <div id="configurator" data-reveal="left">
+            <div class="cx-config">
+              <div class="cx-config-head">
+                <div>
+                  <p class="cx-config-eyebrow">Configure</p>
+                  <h2>Build your server</h2>
+                </div>
+                <span class="cx-pill cx-pill--teal">Preview</span>
+              </div>
+
+              <div
+                class="cx-config-group"
+                role="group"
+                aria-labelledby="config-app-label"
+              >
+                <p class="cx-config-label" id="config-app-label">
+                  Application
+                  <span class="hint">visual selection</span>
+                </p>
+                <div class="cx-chips" id="config-apps">
+                  <button
+                    type="button"
+                    class="cx-chip"
+                    aria-pressed="true"
+                    data-app="Vanilla Java"
+                  >
+                    <img
+                      class="cx-chip-icon"
+                      src="/images/software/vanilla-java.svg"
+                      alt=""
+                      width="22"
+                      height="22"
+                      decoding="async"
+                    />
+                    Vanilla Java
+                  </button>
+                  <button
+                    type="button"
+                    class="cx-chip"
+                    aria-pressed="false"
+                    data-app="Vanilla Bedrock"
+                  >
+                    <img
+                      class="cx-chip-icon"
+                      src="/images/software/vanilla-bedrock.svg"
+                      alt=""
+                      width="22"
+                      height="22"
+                      decoding="async"
+                    />
+                    Vanilla Bedrock
+                  </button>
+                  <button
+                    type="button"
+                    class="cx-chip"
+                    aria-pressed="false"
+                    data-app="Paper"
+                  >
+                    <img
+                      class="cx-chip-icon"
+                      src="/images/software/paper.svg"
+                      alt=""
+                      width="22"
+                      height="22"
+                      decoding="async"
+                    />
+                    Paper
+                  </button>
+                  <button
+                    type="button"
+                    class="cx-chip"
+                    aria-pressed="false"
+                    data-app="Forge"
+                  >
+                    <img
+                      class="cx-chip-icon"
+                      src="/images/software/forge.svg"
+                      alt=""
+                      width="22"
+                      height="22"
+                      decoding="async"
+                    />
+                    Forge
+                  </button>
+                  <button
+                    type="button"
+                    class="cx-chip"
+                    aria-pressed="false"
+                    data-app="NeoForge"
+                  >
+                    <img
+                      class="cx-chip-icon"
+                      src="/images/software/neoforge.svg"
+                      alt=""
+                      width="22"
+                      height="22"
+                      decoding="async"
+                    />
+                    NeoForge
+                  </button>
+                  <button
+                    type="button"
+                    class="cx-chip"
+                    aria-pressed="false"
+                    data-app="Fabric"
+                  >
+                    <img
+                      class="cx-chip-icon"
+                      src="/images/software/fabric.svg"
+                      alt=""
+                      width="22"
+                      height="22"
+                      decoding="async"
+                    />
+                    Fabric
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="cx-config-group"
+                role="group"
+                aria-labelledby="config-plan-label"
+              >
+                <p class="cx-config-label" id="config-plan-label">
+                  Plan
+                  <span class="hint" id="config-plan-hint">from catalog API</span>
+                </p>
+                <div class="cx-chips" id="config-plans">
+                  <div class="cx-skeleton" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cx-config-pair">
+                <div class="cx-config-placeholder">
+                  <span>Version</span>
+                  <strong>Set at launch</strong>
+                </div>
+                <div class="cx-config-placeholder">
+                  <span>Region</span>
+                  <strong>Set at launch</strong>
+                </div>
+              </div>
+
+              <dl class="cx-config-summary">
+                <div>
+                  <dt>Application</dt>
+                  <dd id="config-summary-app">Vanilla Java</dd>
+                </div>
+                <div>
+                  <dt>Plan</dt>
+                  <dd id="config-summary-plan">Loadingâ€¦</dd>
+                </div>
+                <div>
+                  <dt>Resources</dt>
+                  <dd id="config-summary-resources">â€”</dd>
+                </div>
+                <div>
+                  <dt>Price</dt>
+                  <dd id="config-summary-price">â€”</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd class="is-teal">
+                    <span class="cx-status"
+                      ><i aria-hidden="true"></i>Preview ready</span
+                    >
+                  </dd>
+                </div>
+              </dl>
+
+              <a
+                class="cx-btn cx-btn--primary cx-btn--block"
+                id="config-cta"
+                href="/register"
+                >Continue to start</a
+              >
+
+              <p class="cx-config-note">
+                The configurator is a front-end preview. Application choices
+                are illustrative; plan, price, and resources come from the live
+                catalog. Version and region lists publish with provisioning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== PRICING ========================== -->
+      <section class="cx-section" id="pricing" aria-labelledby="pricing-title">
+        <div class="cx-container">
+          <div class="cx-section-head cx-section-head--center" data-reveal="up">
+            <p class="cx-eyebrow">Pricing</p>
+            <h2 id="pricing-title">Plans that load from the catalog</h2>
+            <p class="cx-lead">
+              Every price, billing cycle, and resource below is read live from
+              the platform API â€” nothing on this page is hard-coded.
+            </p>
+          </div>
+
+          <p
+            class="cx-status-msg"
+            id="pricing-status"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+
+          <div class="cx-plan-grid" id="pricing-grid" data-stagger></div>
+
+          <p class="cx-pricing-footnote">
+            Currency, prices, and billing cycles are supplied by the server
+            catalog. Minecraft server provisioning and final commercial terms
+            publish with the billing system. Not affiliated with Mojang or
+            Microsoft.
+          </p>
+        </div>
+      </section>
+
+      <!-- ====================== RESOURCE / VALUE ===================== -->
+      <section
+        class="cx-section cx-section--soft"
+        id="features"
+        aria-labelledby="value-title"
+      >
+        <div class="cx-container cx-value">
+          <div data-reveal="up">
+            <p class="cx-eyebrow">What you get</p>
+            <h2 class="cx-title" id="value-title">
+              Everything a growing world needs, <em>in one place</em>
+            </h2>
+            <p class="cx-lead">
+              Resource headroom, recoverable saves, and control that does not
+              require a sysadmin degree â€” the parts of hosting that actually
+              matter once players are online.
+            </p>
+
+            <div class="cx-stat-strip">
+              <div class="cx-stat">
+                <strong>24/7</strong>
+                <span>Always-on operation</span>
+              </div>
+              <div class="cx-stat">
+                <strong>Daily</strong>
+                <span>Managed backups</span>
+              </div>
+              <div class="cx-stat">
+                <strong>NVMe</strong>
+                <span>Fast world storage</span>
+              </div>
+              <div class="cx-stat">
+                <strong>Tiered</strong>
+                <span>Scale on demand</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cx-value-list" data-stagger>
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 17l6-6 4 4 7-8" />
+                  <path d="M14 7h6v6" />
+                </svg>
+              </span>
+              <div>
+                <h3>Scale resources</h3>
+                <p>
+                  Step up RAM and CPU tiers when chunks and players pile up,
+                  instead of migrating to a new host mid-season.
+                </p>
+              </div>
+            </article>
+
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon cx-value-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" />
+                  <path d="M3 8l3-4h12l3 4" />
+                  <path d="M12 11v5" />
+                  <path d="M9.5 13.5L12 11l2.5 2.5" />
+                </svg>
+              </span>
+              <div>
+                <h3>Backups you can restore</h3>
+                <p>
+                  Daily snapshots of your world turn a bad plugin update or a
+                  griefing night into a restore, not a rebuild.
+                </p>
+              </div>
+            </article>
+
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 6h16M4 12h10M4 18h7" />
+                  <circle cx="18" cy="17" r="3" />
+                  <path d="M20.5 19.5L22 21" />
+                </svg>
+              </span>
+              <div>
+                <h3>Simple server management</h3>
+                <p>
+                  Start, stop, read logs, and edit files from one dashboard â€”
+                  with SFTP when you would rather use your own tools.
+                </p>
+              </div>
+            </article>
+
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon cx-value-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </span>
+              <div>
+                <h3>DDoS protection</h3>
+                <p>
+                  Filtering in front of the game port keeps unwanted traffic
+                  away from your players' connections.
+                </p>
+              </div>
+            </article>
+
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="7" rx="2" />
+                  <rect x="3" y="13" width="18" height="7" rx="2" />
+                  <path d="M7 7.5h.01M7 16.5h.01" />
+                </svg>
+              </span>
+              <div>
+                <h3>NVMe storage</h3>
+                <p>
+                  Fast disks keep chunk loads, world saves, and restarts
+                  snappy, even on larger modded worlds.
+                </p>
+              </div>
+            </article>
+
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon cx-value-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </span>
+              <div>
+                <h3>24/7 operation</h3>
+                <p>
+                  The server stays up around the clock, so a friend logging in
+                  from another time zone is never a problem.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== CLOSING CTA ====================== -->
+      <section class="cx-section" aria-labelledby="mc-cta-title">
+        <div class="cx-container">
+          <div class="cx-cta" data-reveal="up">
+            <div>
+              <p class="cx-eyebrow">Get started</p>
+              <h2 id="mc-cta-title">Ready to launch your server?</h2>
+              <p>
+                Create an account, pick a plan, and your world is one step
+                away. Start small and scale whenever your community does.
+              </p>
+            </div>
+            <div class="cx-cta-actions">
+              <a class="cx-btn cx-btn--primary cx-btn--lg" href="/register"
+                >Start your server</a
+              >
+              <a
+                class="cx-btn cx-btn--outline cx-btn--lg"
+                href="/minecraft-hosting#pricing"
+                >View plans</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+            <span class="brand-text" data-brand-name>ARC HOST</span>
+          </a>
+          <p data-brand-tagline>
+            Minecraft, web, and VPS hosting on one platform
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Hosting</h2>
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+            <li><a href="/minecraft-hosting#features">Features</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Account</h2>
+          <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Get Started</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span data-current-year>2026</span>
+          <span data-brand-name>ARC HOST</span>. All rights reserved.
+        </p>
+        <p>Plans, features, and provisioning finalize at launch.</p>
+      </div>
+    </footer>
+
+    <script src="/js/client-config.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth-nav.js"></script>
+    <script src="/js/plans.js?v=7de4a49b"></script>
+    <script src="/js/minecraft-page.js"></script>
+    <script src="/js/motion.js"></script>
+  </body>
+</html>

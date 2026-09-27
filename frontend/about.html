@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About ARC HOST — a hosting platform for Minecraft, web, and VPS with catalog-driven pricing, published specifications, and no claims we cannot back up."
+    />
+    <title>About | ARC HOST</title>
+    <!--
+      Canonical is deliberately RELATIVE until the client's final domain is
+      supplied. Set CLIENT_BRAND.origin in /js/client-config.js to emit an
+      absolute canonical URL — do not hardcode a third-party domain here.
+    -->
+    <link rel="canonical" href="/about" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/client-theme.css" />
+  </head>
+  <body data-page-title="About">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="/"
+          data-brand-label="{brand} — home"
+          aria-label="ARC HOST — home"
+        >
+          <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+          <span class="brand-text" data-brand-name>ARC HOST</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span class="visually-hidden">Menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+          <div class="nav-actions" data-auth-nav>
+            <div data-auth-anon>
+              <a class="cx-btn cx-btn--ghost cx-btn--sm" href="/login">Login</a>
+              <a class="cx-btn cx-btn--primary cx-btn--sm" href="/register"
+                >Get Started</a
+              >
+            </div>
+            <div data-auth-user hidden>
+              <a class="cx-btn cx-btn--dark cx-btn--sm" href="/dashboard">Dashboard</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ============================ HERO ============================ -->
+      <section class="cx-page-hero" aria-labelledby="about-hero-title">
+        <div class="cx-container">
+          <p class="cx-eyebrow" data-reveal="up">
+            <span class="cx-eyebrow-dot" aria-hidden="true"></span>
+            About
+          </p>
+
+          <h1 id="about-hero-title" data-reveal="up">
+            Hosting that shows <em>its work.</em>
+          </h1>
+
+          <p class="cx-lead" data-reveal="up">
+            ARC HOST is a hosting platform for Minecraft servers, websites, and
+            virtual private servers. One account, one dashboard, and a catalog
+            that supplies every price and specification you read on this site.
+          </p>
+
+          <ul class="cx-badges" data-reveal="up">
+            <li>Catalog pricing</li>
+            <li>Published specs only</li>
+            <li>One dashboard</li>
+            <li>No invented claims</li>
+          </ul>
+
+          <div class="cx-hero-actions" data-reveal="up">
+            <a class="cx-btn cx-btn--primary cx-btn--lg" href="/web-hosting"
+              >See the plans</a
+            >
+            <a class="cx-btn cx-btn--outline cx-btn--lg" href="/contact"
+              >Contact us</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= WHAT WE BUILD ======================= -->
+      <section class="cx-section" aria-labelledby="about-products-title">
+        <div class="cx-container cx-split">
+          <div class="cx-split-lead" data-reveal="up">
+            <p class="cx-eyebrow">What we build</p>
+            <h2 id="about-products-title">Three products, one account.</h2>
+            <p class="cx-lead">
+              Each product page pulls its plans from the same catalog API, so
+              the numbers stay consistent wherever you read them.
+            </p>
+            <a class="cx-text-link" href="/minecraft-hosting"
+              >Explore Minecraft Hosting<span aria-hidden="true">→</span></a
+            >
+          </div>
+
+          <div class="cx-split-body" data-stagger>
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="7" rx="2" />
+                  <rect x="3" y="13" width="18" height="7" rx="2" />
+                  <path d="M7 7.5h.01M7 16.5h.01" />
+                </svg>
+              </span>
+              <div>
+                <h3>Minecraft Hosting</h3>
+                <p>
+                  Java and Bedrock servers with plugin and mod support, priced
+                  from the live catalog and managed in the dashboard.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">01</span>
+            </article>
+
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon cx-block-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="16" rx="2" />
+                  <path d="M3 9h18" />
+                </svg>
+              </span>
+              <div>
+                <h3>Web Hosting</h3>
+                <p>
+                  Websites, email, databases, storage, and SSL listed per tier
+                  — read the comparison table, not a sales page.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">02</span>
+            </article>
+
+            <article class="cx-block" data-reveal="up">
+              <span class="cx-block-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <rect x="9" y="9" width="6" height="6" />
+                </svg>
+              </span>
+              <div>
+                <h3>VPS Hosting</h3>
+                <p>
+                  vCPU, RAM, storage, bandwidth, and IPv4 counts published as
+                  catalog fields, ready for provisioning when it opens.
+                </p>
+              </div>
+              <span class="cx-block-index" aria-hidden="true">03</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================= HOW WE WORK ======================= -->
+      <section class="cx-section cx-section--soft" aria-labelledby="about-work-title">
+        <div class="cx-container">
+          <div class="cx-section-head cx-section-head--center" data-reveal="up">
+            <p class="cx-eyebrow">How we work</p>
+            <h2 id="about-work-title">Rules we hold ourselves to</h2>
+            <p class="cx-lead">
+              Hosting pages are full of numbers nobody checks. These are the
+              rules this site is built around.
+            </p>
+          </div>
+
+          <div class="cx-feature-grid" data-stagger>
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 17l6-6 4 4 7-8" />
+                  <path d="M14 7h6v6" />
+                </svg>
+              </span>
+              <h3>Prices come from the API</h3>
+              <p>
+                Every price, billing cycle, and limit on the product pages is
+                fetched from the catalog — if the API does not return it, the
+                page does not show it.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </span>
+              <h3>No invented specifications</h3>
+              <p>
+                Hardware, regions, operating systems, and uptime figures stay
+                unpublished until there is something real behind them.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1" />
+                </svg>
+              </span>
+              <h3>One account for everything</h3>
+              <p>
+                Minecraft, web, and VPS plans sit in the same account and the
+                same dashboard — no second login for a second product.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                </svg>
+              </span>
+              <h3>Honest contact details</h3>
+              <p>
+                This site lists no phone number or mailbox we do not actually
+                monitor — the contact page explains how to reach us today.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="16" rx="2" />
+                  <path d="M7 9h10M7 13h6" />
+                </svg>
+              </span>
+              <h3>Checkout when payments exist</h3>
+              <p>
+                Payment options are shown during checkout once payments are
+                enabled — never advertised here as available before then.
+              </p>
+            </article>
+
+            <article class="cx-card" data-reveal="up">
+              <span class="cx-card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 6h16M4 12h10M4 18h7" />
+                  <circle cx="18" cy="17" r="3" />
+                  <path d="M20.5 19.5L22 21" />
+                </svg>
+              </span>
+              <h3>Questions go to a person</h3>
+              <p>
+                Pre-sales and account questions go through the contact page and
+                the dashboard — one route, tracked in one place.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== AT A GLANCE ====================== -->
+      <section class="cx-section" aria-labelledby="about-stats-title">
+        <div class="cx-container cx-value">
+          <div data-reveal="up">
+            <p class="cx-eyebrow">At a glance</p>
+            <h2 class="cx-title" id="about-stats-title">
+              Small on purpose, <em>specific where it counts</em>
+            </h2>
+            <p class="cx-lead">
+              No founding year, no office photos, no customer counters. The
+              numbers we do publish are the ones you can verify on the product
+              pages.
+            </p>
+
+            <div class="cx-stat-strip">
+              <div class="cx-stat">
+                <strong>3</strong>
+                <span>Hosting products</span>
+              </div>
+              <div class="cx-stat">
+                <strong>1</strong>
+                <span>Account &amp; dashboard</span>
+              </div>
+              <div class="cx-stat">
+                <strong>Live</strong>
+                <span>Catalog pricing</span>
+              </div>
+              <div class="cx-stat">
+                <strong>None</strong>
+                <span>Invented specs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cx-value-list" data-stagger>
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+              </span>
+              <div>
+                <h3>What is published today</h3>
+                <p>
+                  Public site, customer authentication, dashboard, plan
+                  catalog, and administrative tools — all running against this
+                  deployment.
+                </p>
+              </div>
+            </article>
+
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon cx-value-icon--teal" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </span>
+              <div>
+                <h3>What comes next</h3>
+                <p>
+                  Order provisioning, payment providers, and service controls
+                  — each announced here and in the FAQ when it goes live,
+                  not before.
+                </p>
+              </div>
+            </article>
+
+            <article class="cx-value-item" data-reveal="up">
+              <span class="cx-value-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </span>
+              <div>
+                <h3>What stays off the page</h3>
+                <p>
+                  Uptime percentages, data-center maps, and hardware brands we
+                  cannot evidence — the FAQ explains each one.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== CLOSING CTA ====================== -->
+      <section class="cx-section" aria-labelledby="about-cta-title">
+        <div class="cx-container">
+          <div class="cx-cta" data-reveal="up">
+            <div>
+              <p class="cx-eyebrow">Get started</p>
+              <h2 id="about-cta-title">See the catalog for yourself.</h2>
+              <p>
+                Plans, specs, and prices load live on every product page —
+                compare them, then create an account when you are ready.
+              </p>
+            </div>
+            <div class="cx-cta-actions">
+              <a class="cx-btn cx-btn--primary cx-btn--lg" href="/web-hosting"
+                >View plans</a
+              >
+              <a class="cx-btn cx-btn--outline cx-btn--lg" href="/faq"
+                >Read the FAQ</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true" data-brand-initial>A</span>
+            <span class="brand-text" data-brand-name>ARC HOST</span>
+          </a>
+          <p data-brand-tagline>
+            Minecraft, web, and VPS hosting on one platform
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Hosting</h2>
+          <ul>
+            <li><a href="/minecraft-hosting">Minecraft Hosting</a></li>
+            <li><a href="/web-hosting">Web Hosting</a></li>
+            <li><a href="/vps-hosting">VPS Hosting</a></li>
+            <li><a href="/minecraft-hosting#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Account</h2>
+          <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Get Started</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span data-current-year>2026</span>
+          <span data-brand-name>ARC HOST</span>. All rights reserved.
+        </p>
+        <p>Plans, features, and provisioning finalize at launch.</p>
+      </div>
+    </footer>
+
+    <script src="/js/client-config.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth-nav.js"></script>
+    <script src="/js/motion.js"></script>
+  </body>
+</html>
